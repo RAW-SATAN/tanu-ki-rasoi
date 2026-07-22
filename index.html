@@ -332,6 +332,86 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
 .sqbtn{width:34px;height:38px;background:var(--bg2);border:none;cursor:pointer;font-size:1rem;font-weight:700;color:var(--tx);}
 .sqnum{width:34px;text-align:center;font-size:.88rem;font-weight:700;border:none;background:transparent;color:var(--tx);border-left:1px solid var(--bd);border-right:1px solid var(--bd);}
 .sticky-cart{flex:1;background:var(--r);color:#fff;border:none;padding:.66rem;border-radius:8px;font-size:.92rem;font-weight:700;cursor:pointer;letter-spacing:.02em;}
+
+/* ─── CART PAGE ─── */
+.page-wrap{max-width:900px;margin:0 auto;padding:1.25rem 1rem 4rem;}
+@media(min-width:768px){.page-wrap{padding:2.5rem 2rem 4rem;}}
+.page-hdr{display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem;}
+.back-btn{background:none;border:none;color:var(--mu);cursor:pointer;font-size:.85rem;padding:.3rem .6rem;border-radius:6px;border:1px solid var(--bd);}
+.back-btn:hover{background:var(--bg2);}
+.page-title{font-family:Georgia,serif;font-size:1.4rem;letter-spacing:-.02em;}
+@media(min-width:768px){.cart-layout{display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start;}}
+.cart-item{display:flex;gap:.85rem;padding:1rem 0;border-bottom:1px solid var(--bd);}
+.ci-emoji{width:72px;height:72px;border-radius:10px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:2.2rem;flex-shrink:0;}
+.ci-info{flex:1;}
+.ci-name{font-weight:700;font-size:.88rem;margin-bottom:.25rem;}
+.ci-price{font-size:.76rem;color:var(--mu);margin-bottom:.55rem;}
+.ci-qty{display:flex;align-items:center;gap:0;}
+.cq-btn{width:30px;height:30px;border:1.5px solid var(--bd);background:var(--bg2);cursor:pointer;font-size:.95rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.cq-btn:first-child{border-radius:6px 0 0 6px;}
+.cq-btn:last-child{border-radius:0 6px 6px 0;}
+.cq-num{width:34px;height:30px;border-top:1.5px solid var(--bd);border-bottom:1.5px solid var(--bd);text-align:center;font-size:.85rem;font-weight:700;display:flex;align-items:center;justify-content:center;background:var(--bg);}
+.ci-right{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;}
+.ci-total{font-weight:700;font-size:.95rem;font-variant-numeric:tabular-nums;}
+.ci-remove{background:none;border:none;color:var(--mu);cursor:pointer;font-size:.75rem;padding:.2rem;}
+.ci-remove:hover{color:var(--r);}
+.cart-summary{background:var(--bg2);border:1px solid var(--bd);border-radius:12px;padding:1.25rem;}
+.cs-row{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.6rem;}
+.cs-total{font-size:1rem;font-weight:700;border-top:1px solid var(--bd);padding-top:.7rem;margin-top:.4rem;}
+.disc-row{font-size:.78rem;margin-bottom:.5rem;padding:.38rem .55rem;background:rgba(61,122,40,.09);border-radius:5px;}
+
+/* ─── CHECKOUT PAGE ─── */
+.checkout-layout{display:flex;flex-direction:column;gap:1.5rem;}
+@media(min-width:768px){.checkout-layout{flex-direction:row;gap:2.5rem;}}
+.checkout-form{flex:1;}
+.form-sec{margin-bottom:1.5rem;}
+.form-sec h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.85rem;}
+.form-row{display:grid;grid-template-columns:1fr;gap:.7rem;}
+@media(min-width:480px){.form-row.two{grid-template-columns:1fr 1fr;}}
+.form-field{display:flex;flex-direction:column;gap:.3rem;}
+.form-field label{font-size:.75rem;font-weight:600;color:var(--mu);}
+.form-field input,.form-field textarea,.form-field select{border:1.5px solid var(--bd);border-radius:8px;padding:.6rem .8rem;font-size:.88rem;background:var(--bg);color:var(--tx);outline:none;font-family:inherit;}
+.form-field input:focus,.form-field textarea:focus{border-color:var(--y);}
+.pay-opts{display:flex;gap:.75rem;margin-top:.5rem;}
+.pay-opt{flex:1;border:2px solid var(--bd);border-radius:10px;padding:.75rem;cursor:pointer;text-align:center;background:var(--bg);transition:all .2s;font-family:inherit;}
+.pay-opt.active{border-color:var(--y);background:rgba(242,184,48,.08);}
+.pay-opt-icon{font-size:1.4rem;display:block;margin-bottom:.3rem;}
+.pay-opt-lbl{font-size:.78rem;font-weight:700;}
+.pay-opt-sub{font-size:.66rem;color:var(--mu);}
+.pay-opt.active .pay-opt-sub{color:var(--g);}
+.order-mini{background:var(--bg2);border:1px solid var(--bd);border-radius:12px;padding:1.1rem;}
+.order-mini h3{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.85rem;}
+.om-item{display:flex;justify-content:space-between;font-size:.82rem;margin-bottom:.5rem;}
+.om-divider{border-top:1px solid var(--bd);margin:.65rem 0;}
+.om-total{font-weight:700;font-size:.92rem;}
+.place-order-btn{width:100%;background:var(--r);color:#fff;border:none;padding:.9rem;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:1rem;letter-spacing:.02em;}
+.place-order-btn:hover{opacity:.9;}
+
+/* ─── CONFIRMATION PAGE ─── */
+.confirm-wrap{text-align:center;padding:3rem 1.5rem;}
+.confirm-icon{font-size:4.5rem;display:block;margin-bottom:1.2rem;animation:pop .4s ease;}
+@keyframes pop{0%{transform:scale(0.5);opacity:0}70%{transform:scale(1.1)}100%{transform:scale(1);opacity:1}}
+.confirm-wrap h2{font-family:Georgia,serif;font-size:1.7rem;margin-bottom:.6rem;}
+.confirm-wrap p{color:var(--mu);font-size:.88rem;line-height:1.7;margin-bottom:.4rem;}
+.order-id-box{display:inline-block;background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:.55rem 1.2rem;font-size:.82rem;font-weight:700;letter-spacing:.05em;margin:1rem 0 1.5rem;}
+.confirm-btns{display:flex;flex-direction:column;gap:.75rem;align-items:center;}
+@media(min-width:480px){.confirm-btns{flex-direction:row;justify-content:center;}}
+
+/* ─── INFO PAGES (Story, Blog, Contact, Track, Returns, FAQ) ─── */
+.info-page{max-width:760px;margin:0 auto;padding:1.5rem 1rem 4rem;}
+@media(min-width:768px){.info-page{padding:3rem 2rem 5rem;}}
+.info-page h2{font-family:Georgia,serif;font-size:1.55rem;letter-spacing:-.02em;margin-bottom:.85rem;}
+.info-page p{color:var(--mu);font-size:.88rem;line-height:1.85;margin-bottom:1rem;}
+.info-page h3{font-size:1rem;font-weight:700;margin:1.5rem 0 .5rem;}
+.info-card{background:var(--bg2);border:1px solid var(--bd);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:.9rem;}
+.info-card h4{font-weight:700;font-size:.9rem;margin-bottom:.35rem;}
+.info-card p{font-size:.83rem;color:var(--mu);margin:0;}
+.contact-form{max-width:480px;}
+.contact-form .form-field{margin-bottom:.85rem;}
+.track-input-row{display:flex;gap:.6rem;margin-bottom:1.25rem;flex-wrap:wrap;}
+.track-input-row input{flex:1;min-width:180px;border:1.5px solid var(--bd);border-radius:8px;padding:.65rem .9rem;font-size:.88rem;background:var(--bg);color:var(--tx);outline:none;font-family:inherit;}
+.track-input-row input:focus{border-color:var(--y);}
+.track-btn{background:var(--y);color:#1A0F00;border:none;padding:.65rem 1.4rem;border-radius:8px;font-weight:700;font-size:.88rem;cursor:pointer;}
 </style>
 
 <!-- OFFERS MARQUEE -->
@@ -355,18 +435,18 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
   <div class="nav-left">
     <button class="nav-icon hamburger-btn" onclick="openDrawer()" aria-label="Menu">☰</button>
   </div>
-  <div class="nav-logo" onclick="goHome()">Tanu ki Rasoi</div>
+  <div class="nav-logo" onclick="showPage('pg-home')">Tanu ki Rasoi</div>
   <ul class="nav-links-desk">
-    <li><a href="#" onclick="goHome()">Home</a></li>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Our Story</a></li>
-    <li><a href="#">Blogs</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#" onclick="showPage('pg-home')">Home</a></li>
+    <li><a href="#" onclick="showPage('pg-home')">Products</a></li>
+    <li><a href="#" onclick="showPage('pg-story')">Our Story</a></li>
+    <li><a href="#" onclick="showPage('pg-blog')">Blogs</a></li>
+    <li><a href="#" onclick="showPage('pg-contact')">Contact</a></li>
   </ul>
   <div class="nav-right">
     <button class="nav-icon" aria-label="Account">👤</button>
-    <button class="nav-icon" aria-label="Cart">
-      🛒<span class="cart-badge">2</span>
+    <button class="nav-icon" aria-label="Cart" onclick="showPage('pg-cart')">
+      🛒<span class="cart-badge" id="cart-badge" style="display:none">0</span>
     </button>
   </div>
 </nav>
@@ -383,11 +463,13 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
 <div class="drawer" id="drawer">
   <button class="drawer-close" onclick="closeDrawer()">✕</button>
   <ul>
-    <li><a href="#" onclick="goHome();closeDrawer()">Home</a></li>
-    <li><a href="#" onclick="closeDrawer()">Products</a></li>
-    <li><a href="#" onclick="closeDrawer()">Our Story</a></li>
-    <li><a href="#" onclick="closeDrawer()">Blogs</a></li>
-    <li><a href="#" onclick="closeDrawer()">Contact</a></li>
+    <li><a href="#" onclick="showPage('pg-home');closeDrawer()">Home</a></li>
+    <li><a href="#" onclick="showPage('pg-home');closeDrawer()">Products</a></li>
+    <li><a href="#" onclick="showPage('pg-story');closeDrawer()">Our Story</a></li>
+    <li><a href="#" onclick="showPage('pg-blog');closeDrawer()">Blogs</a></li>
+    <li><a href="#" onclick="showPage('pg-contact');closeDrawer()">Contact</a></li>
+    <li><a href="#" onclick="showPage('pg-cart');closeDrawer()">Cart 🛒</a></li>
+    <li><a href="#" onclick="showPage('pg-track');closeDrawer()">Track Order</a></li>
   </ul>
 </div>
 <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
@@ -400,14 +482,13 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
       <div class="eyebrow">🌿 No chemicals. No shortcuts.</div>
       <h1>Pickle like <em>Dadi</em> used to make</h1>
       <p>Handcrafted in small batches from farm-sourced mangoes, whole spices, and zero preservatives.</p>
-      <button class="btn-primary" onclick="goProd()">Shop Now</button>
+      <button class="btn-primary" onclick="showPage('pg-prod')">Shop Now</button>
     </div>
     <div class="hero-jar">🫙</div>
   </div>
 
   <div class="trust-scroll">
     <div class="trust-inner">
-      <div class="trust-item"><span class="ti-icon">🦈</span><div><strong>Shark Tank India</strong><span>Featured Brand</span></div></div>
       <div class="trust-item"><span class="ti-icon">🏆</span><div><strong>10 Lakh+</strong><span>Happy Families</span></div></div>
       <div class="trust-item"><span class="ti-icon">🧪</span><div><strong>Zero</strong><span>Chemical Preservatives</span></div></div>
       <div class="trust-item"><span class="ti-icon">✅</span><div><strong>FSSAI</strong><span>Certified</span></div></div>
@@ -429,7 +510,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
   <div class="sec">
     <div class="sec-row"><h2 class="sec-h" style="margin:0;">Our Bestsellers</h2><a href="#">View all →</a></div>
     <div class="prod-grid">
-      <div class="prod-card" onclick="goProd()">
+      <div class="prod-card" onclick="showPage('pg-prod')">
         <div class="prod-img" style="background:linear-gradient(135deg,#FFF0D0,#FFE0A0);">🫙</div>
         <div class="prod-body">
           <span class="prod-tag t-best">#1 Bestseller</span>
@@ -437,7 +518,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
           <div class="prod-sub">Sunflower Oil · Medium Spicy</div>
           <div class="stars">★★★★☆ <span>4.7 (1,824)</span></div>
           <div class="prod-price"><span class="p-cur">₹299</span><span class="p-mrp">₹400</span><span class="p-off">25% off</span></div>
-          <button class="card-btn">Add to Cart</button>
+          <button class="card-btn" onclick="event.stopPropagation();addToCart('mango-pickle',1)">Add to Cart</button>
         </div>
       </div>
       <div class="prod-card">
@@ -448,18 +529,18 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
           <div class="prod-sub">Mustard Oil · Very Spicy</div>
           <div class="stars">★★★★★ <span>4.8 (777)</span></div>
           <div class="prod-price"><span class="p-cur">₹349</span><span class="p-mrp">₹400</span><span class="p-off">13% off</span></div>
-          <button class="card-btn">Add to Cart</button>
+          <button class="card-btn" onclick="addToCart('chilli-pickle',1)">Add to Cart</button>
         </div>
       </div>
-      <div class="prod-card">
+      <div class="prod-card" onclick="showPage('pg-prod')">
         <div class="prod-img" style="background:linear-gradient(135deg,#E8F5E0,#D0EAC0);">🫙</div>
         <div class="prod-body">
-          <span class="prod-tag t-mild">Jain Friendly</span>
+          <span class="prod-tag t-mild">Traditional</span>
           <div class="prod-name">Punjabi Mango Pickle</div>
           <div class="prod-sub">Mustard Oil · Medium Spicy</div>
           <div class="stars">★★★★★ <span>4.8 (650)</span></div>
           <div class="prod-price"><span class="p-cur">₹299</span><span class="p-mrp">₹400</span><span class="p-off">25% off</span></div>
-          <button class="card-btn">Add to Cart</button>
+          <button class="card-btn" onclick="event.stopPropagation();addToCart('punjabi-mango',1)">Add to Cart</button>
         </div>
       </div>
       <div class="prod-card">
@@ -470,7 +551,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
           <div class="prod-sub">8 × 75g Assorted Pickles</div>
           <div class="stars">★★★★★ <span>4.8 (1,762)</span></div>
           <div class="prod-price"><span class="p-cur">₹599</span><span class="p-mrp">₹699</span><span class="p-off">14% off</span></div>
-          <button class="card-btn">Add to Cart</button>
+          <button class="card-btn" onclick="addToCart('gift-pack',1)">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -510,7 +591,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
   <div class="cta-sec">
     <h2>Your first taste of real achar.</h2>
     <p>Free delivery on orders above ₹499 · COD available everywhere</p>
-    <button class="btn-dk" onclick="goProd()">Shop the Collection</button>
+    <button class="btn-dk" onclick="showPage('pg-prod')">Shop the Collection</button>
   </div>
 
   <footer>
@@ -520,12 +601,12 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
         <p>Handcrafted Indian pickles made with zero chemicals, farm-fresh mangoes, and decades-old recipes.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h4>Products</h4><ul><li><a href="#">Mango Pickles</a></li><li><a href="#">Chilli Pickles</a></li><li><a href="#">Mixed Achar</a></li><li><a href="#">Gift Packs</a></li></ul></div>
-        <div class="foot-col"><h4>Company</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul></div>
-        <div class="foot-col"><h4>Help</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Products</h4><ul><li><a href="#" onclick="showPage('pg-home')">Mango Pickles</a></li><li><a href="#" onclick="showPage('pg-home')">Chilli Pickles</a></li><li><a href="#" onclick="showPage('pg-home')">Mixed Achar</a></li><li><a href="#" onclick="showPage('pg-home')">Gift Packs</a></li></ul></div>
+        <div class="foot-col"><h4>Company</h4><ul><li><a href="#" onclick="showPage('pg-story')">Our Story</a></li><li><a href="#" onclick="showPage('pg-blog')">Blog</a></li><li><a href="#" onclick="showPage('pg-contact')">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Help</h4><ul><li><a href="#" onclick="showPage('pg-track')">Track Order</a></li><li><a href="#" onclick="showPage('pg-returns')">Returns</a></li><li><a href="#" onclick="showPage('pg-faq')">FAQ</a></li><li><a href="#" onclick="showPage('pg-contact')">Contact</a></li></ul></div>
       </div>
     </div>
-    <div class="foot-btm"><p>© 2024 Tanu ki Rasoi. All rights reserved.</p><p>🇮🇳 Made in India · FSSAI Licensed · Shark Tank Featured</p></div>
+    <div class="foot-btm"><p>© 2024 Tanu ki Rasoi. All rights reserved.</p><p>🇮🇳 Made in India · FSSAI Licensed</p></div>
   </footer>
 </div>
 
@@ -533,7 +614,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
 <div id="pg-prod" style="display:none;">
 
   <div class="breadcrumb">
-    <a onclick="goHome()">Home</a><span class="bc-sep">›</span>
+    <a onclick="showPage('pg-home')">Home</a><span class="bc-sep">›</span>
     <a href="#">Summer Special Pickle</a><span class="bc-sep">›</span>
     <span>Punjabi Mango Pickle</span>
   </div>
@@ -568,7 +649,6 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
       <div class="attr-row">
         <div class="attr-badge"><span class="ab-icon">🛢️</span><span class="ab-label">Mustard Oil</span></div>
         <div class="attr-badge"><span class="ab-icon">🌶️</span><span class="ab-label">Medium Spicy</span></div>
-        <div class="attr-badge"><span class="ab-icon">🌿</span><span class="ab-label">Jain Friendly</span></div>
       </div>
 
       <div class="urgency">🔥 36 sold in last 8 hours</div>
@@ -599,12 +679,12 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
       <div class="desktop-vars">
         <div style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:.6rem;">Choose Size</div>
         <div class="dvar-row">
-          <div class="dvar active" onclick="dSelectVar(this,299,400,25)">
+          <div class="dvar active" onclick="dSelectVar(this,299)">
             <div class="dvar-sz">325g Jar</div>
             <div class="dvar-pr">₹299 <span style="text-decoration:line-through;color:var(--mu);font-weight:400;">₹400</span></div>
             <div class="dvar-of">25% off · ₹92/100g</div>
           </div>
-          <div class="dvar" onclick="dSelectVar(this,799,999,20)">
+          <div class="dvar" onclick="dSelectVar(this,799)">
             <div class="dvar-best">Best Value</div>
             <div class="dvar-sz">1Kg Jar</div>
             <div class="dvar-pr">₹799 <span style="text-decoration:line-through;color:var(--mu);font-weight:400;">₹999</span></div>
@@ -617,7 +697,7 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
             <input class="dqty-num" id="dqty" type="text" value="1" readonly>
             <button class="dqty-btn" onclick="chQty('d',1)">+</button>
           </div>
-          <button class="dcart-btn">Add to Cart</button>
+          <button class="dcart-btn" onclick="addProductToCart()">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -690,10 +770,10 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
     <div class="sec-row"><h2 class="sec-h" style="margin:0;">Frequently Bought Pickles</h2></div>
     <div class="prod-scroll-wrap">
       <div class="prod-scroll">
-        <div class="prod-card" onclick="goProd()"><div class="prod-img" style="background:linear-gradient(135deg,#FFF0D0,#FFE0A0);">🫙</div><div class="prod-body"><span class="prod-tag t-best">Bestseller</span><div class="prod-name">Homemade Mango Pickle</div><div class="stars">★★★★☆ <span>4.7 (1,824)</span></div><div class="prod-price"><span class="p-cur">₹299</span><span class="p-mrp">₹400</span></div><button class="card-btn">Add to Cart</button></div></div>
-        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#FFE0D0,#FFCAB0);">🫙</div><div class="prod-body"><span class="prod-tag t-hot">Spicy</span><div class="prod-name">Red Chilli Pickle</div><div class="stars">★★★★★ <span>4.8 (777)</span></div><div class="prod-price"><span class="p-cur">₹349</span><span class="p-mrp">₹400</span></div><button class="card-btn">Add to Cart</button></div></div>
-        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#FFF5D0,#FFE890);">🎁</div><div class="prod-body"><span class="prod-tag t-gift">Gift Pack</span><div class="prod-name">Nani's Special Pack</div><div class="stars">★★★★★ <span>4.8 (1,762)</span></div><div class="prod-price"><span class="p-cur">₹599</span><span class="p-mrp">₹699</span></div><button class="card-btn">Add to Cart</button></div></div>
-        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#E8F5E0,#D0EAC0);">🫙</div><div class="prod-body"><span class="prod-tag t-mild">Traditional</span><div class="prod-name">Avakaya Pickle</div><div class="stars">★★★★★ <span>4.8 (320)</span></div><div class="prod-price"><span class="p-cur">₹329</span><span class="p-mrp">₹400</span></div><button class="card-btn">Add to Cart</button></div></div>
+        <div class="prod-card" onclick="showPage('pg-prod')"><div class="prod-img" style="background:linear-gradient(135deg,#FFF0D0,#FFE0A0);">🫙</div><div class="prod-body"><span class="prod-tag t-best">Bestseller</span><div class="prod-name">Homemade Mango Pickle</div><div class="stars">★★★★☆ <span>4.7 (1,824)</span></div><div class="prod-price"><span class="p-cur">₹299</span><span class="p-mrp">₹400</span></div><button class="card-btn" onclick="event.stopPropagation();addToCart('mango-pickle',1)">Add to Cart</button></div></div>
+        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#FFE0D0,#FFCAB0);">🫙</div><div class="prod-body"><span class="prod-tag t-hot">Spicy</span><div class="prod-name">Red Chilli Pickle</div><div class="stars">★★★★★ <span>4.8 (777)</span></div><div class="prod-price"><span class="p-cur">₹349</span><span class="p-mrp">₹400</span></div><button class="card-btn" onclick="addToCart('chilli-pickle',1)">Add to Cart</button></div></div>
+        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#FFF5D0,#FFE890);">🎁</div><div class="prod-body"><span class="prod-tag t-gift">Gift Pack</span><div class="prod-name">Nani's Special Pack</div><div class="stars">★★★★★ <span>4.8 (1,762)</span></div><div class="prod-price"><span class="p-cur">₹599</span><span class="p-mrp">₹699</span></div><button class="card-btn" onclick="addToCart('gift-pack',1)">Add to Cart</button></div></div>
+        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#E8F5E0,#D0EAC0);">🫙</div><div class="prod-body"><span class="prod-tag t-mild">Traditional</span><div class="prod-name">Avakaya Pickle</div><div class="stars">★★★★★ <span>4.8 (320)</span></div><div class="prod-price"><span class="p-cur">₹329</span><span class="p-mrp">₹400</span></div><button class="card-btn" onclick="addToCart('avakaya',1)">Add to Cart</button></div></div>
       </div>
     </div>
   </div>
@@ -773,8 +853,8 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
         <p>Handcrafted Indian pickles made with zero chemicals, farm-fresh mangoes, and decades-old recipes.</p>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h4>Products</h4><ul><li><a href="#">Mango Pickles</a></li><li><a href="#">Chilli Pickles</a></li><li><a href="#">Gift Packs</a></li></ul></div>
-        <div class="foot-col"><h4>Help</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+        <div class="foot-col"><h4>Products</h4><ul><li><a href="#" onclick="showPage('pg-home')">Mango Pickles</a></li><li><a href="#" onclick="showPage('pg-home')">Chilli Pickles</a></li><li><a href="#" onclick="showPage('pg-home')">Gift Packs</a></li></ul></div>
+        <div class="foot-col"><h4>Help</h4><ul><li><a href="#" onclick="showPage('pg-track')">Track Order</a></li><li><a href="#" onclick="showPage('pg-returns')">Returns</a></li><li><a href="#" onclick="showPage('pg-faq')">FAQ</a></li><li><a href="#" onclick="showPage('pg-contact')">Contact</a></li></ul></div>
       </div>
     </div>
     <div class="foot-btm"><p>© 2024 Tanu ki Rasoi. All rights reserved.</p><p>🇮🇳 Made in India · FSSAI Certified</p></div>
@@ -783,12 +863,12 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
   <!-- STICKY BOTTOM BAR (mobile only) -->
   <div class="sticky-bar">
     <div class="sticky-vars">
-      <button class="svar active" onclick="sSelectVar(this,'325g Jar','₹299 ₹400 25% off')">
+      <button class="svar active" onclick="sSelectVar(this,'325g Jar',299)">
         <div class="svar-lbl">325g Jar</div>
         <div class="svar-pr">₹299.0 &nbsp;<s>₹400.0</s>&nbsp; 25% off</div>
         <div class="svar-pr">₹92.0/100g</div>
       </button>
-      <button class="svar" onclick="sSelectVar(this,'1Kg Jar','₹799 ₹999 20% off')">
+      <button class="svar" onclick="sSelectVar(this,'1Kg Jar',799)">
         <div style="font-size:.58rem;color:var(--g);font-weight:700;">Best Value</div>
         <div class="svar-lbl">1Kg Jar</div>
         <div class="svar-pr">₹799.0 &nbsp;<s>₹999.0</s>&nbsp; 20% off</div>
@@ -801,23 +881,436 @@ footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 
         <span class="sqnum" id="sqty">1</span>
         <button class="sqbtn" onclick="chQty('s',1)">+</button>
       </div>
-      <button class="sticky-cart">Add to Cart</button>
+      <button class="sticky-cart" onclick="addProductToCart()">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CART PAGE ═══ -->
+<div id="pg-cart" style="display:none;">
+  <div class="page-wrap">
+    <div class="page-hdr">
+      <button class="back-btn" onclick="history.length>1?showPage('pg-home'):showPage('pg-home')">← Back</button>
+      <h1 class="page-title">Your Cart</h1>
+    </div>
+    <div class="cart-layout">
+      <div id="cart-items"></div>
+      <div id="cart-summary"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CHECKOUT PAGE ═══ -->
+<div id="pg-checkout" style="display:none;">
+  <div class="page-wrap">
+    <div class="page-hdr">
+      <button class="back-btn" onclick="showPage('pg-cart')">← Cart</button>
+      <h1 class="page-title">Checkout</h1>
+    </div>
+    <div class="checkout-layout">
+      <div class="checkout-form">
+        <div class="form-sec">
+          <h3>Delivery Details</h3>
+          <div class="form-row two" style="margin-bottom:.7rem">
+            <div class="form-field"><label>Full Name</label><input type="text" id="co-name" placeholder="Your full name"></div>
+            <div class="form-field"><label>Phone</label><input type="tel" id="co-phone" placeholder="10-digit mobile"></div>
+          </div>
+          <div class="form-row" style="margin-bottom:.7rem">
+            <div class="form-field"><label>Address</label><input type="text" id="co-addr" placeholder="Flat / House / Street"></div>
+          </div>
+          <div class="form-row two">
+            <div class="form-field"><label>City</label><input type="text" id="co-city" placeholder="City"></div>
+            <div class="form-field"><label>Pincode</label><input type="text" id="co-pin" placeholder="Pincode" maxlength="6"></div>
+          </div>
+        </div>
+        <div class="form-sec">
+          <h3>Payment Method</h3>
+          <div class="pay-opts">
+            <button class="pay-opt active" id="pay-cod" onclick="selectPay('cod')">
+              <span class="pay-opt-icon">💵</span>
+              <div class="pay-opt-lbl">Cash on Delivery</div>
+              <div class="pay-opt-sub">Pay when delivered</div>
+            </button>
+            <button class="pay-opt" id="pay-upi" onclick="selectPay('upi')">
+              <span class="pay-opt-icon">📱</span>
+              <div class="pay-opt-lbl">UPI / Prepaid</div>
+              <div class="pay-opt-sub" id="upi-sub">Extra 3% off</div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="order-mini" id="order-mini"></div>
+        <button class="place-order-btn" onclick="placeOrder()">Place Order →</button>
+        <div style="font-size:.72rem;color:var(--mu);text-align:center;margin-top:.75rem">By placing order you agree to our T&C</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONFIRMATION PAGE ═══ -->
+<div id="pg-confirm" style="display:none;">
+  <div class="page-wrap">
+    <div class="confirm-wrap">
+      <span class="confirm-icon">✅</span>
+      <h2>Order Placed Successfully!</h2>
+      <p>Thank you for ordering from Tanu ki Rasoi 🫙</p>
+      <p>We'll prepare your pickle with love and ship it within 1-2 days.</p>
+      <div class="order-id-box" id="order-id-box">Order #TKR00000</div>
+      <p style="font-size:.82rem;"><strong>Estimated Delivery:</strong> <span id="est-delivery">3-5 business days</span></p>
+      <div class="confirm-btns" style="margin-top:2rem;">
+        <button class="btn-primary" onclick="showPage('pg-track')">Track Order</button>
+        <button class="btn-dk" onclick="showPage('pg-home');cart={}; updateCartBadge();">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ OUR STORY PAGE ═══ -->
+<div id="pg-story" style="display:none;">
+  <div class="info-page">
+    <div class="page-hdr" style="margin-bottom:1.5rem">
+      <button class="back-btn" onclick="showPage('pg-home')">← Home</button>
+      <h1 class="page-title">Our Story</h1>
+    </div>
+    <div style="font-size:3rem;margin-bottom:1.25rem;">🫙</div>
+    <h2>From Tanu's Kitchen to Your Table</h2>
+    <p>Tanu ki Rasoi was born out of a simple belief — that the best pickles in the world are made at home, with patience, love, and real ingredients. Tanu started making achar for her family using recipes passed down from her mother and grandmother in a small town in Uttar Pradesh.</p>
+    <p>When neighbors began asking for jars, and then their friends, and then strangers across the city — Tanu realised this wasn't just about pickle. It was about the taste of home, the smell of mustard oil in the morning, the crunch of mango on a summer afternoon.</p>
+    <h3>The Tanu ki Rasoi Mission</h3>
+    <p>We believe every Indian family deserves access to real, handmade achar — free from artificial preservatives, artificial colors, and shortcuts. Every jar is made in small batches, sun-fermented the traditional way, and lab-tested before it reaches your home.</p>
+    <div class="info-card"><h4>🌿 Zero Chemicals</h4><p>No artificial preservatives — just salt, oil, spice and sunlight.</p></div>
+    <div class="info-card"><h4>🧑‍🌾 Farm Sourced</h4><p>Mangoes from village farms in Chhatrapati Sambhajinagar. Spices from growers who know their craft.</p></div>
+    <div class="info-card"><h4>☀️ Sun Fermented</h4><p>Stored in traditional barnis under the open sky, aged naturally.</p></div>
+    <div class="info-card"><h4>🧪 Lab Tested</h4><p>Every batch is tested for hygiene, safety, and consistent taste.</p></div>
+    <h3>Join Our Family</h3>
+    <p>Over 10 lakh families across India now start their meals with a spoonful of Tanu ki Rasoi. We'd love for you to be part of the story.</p>
+    <button class="btn-primary" onclick="showPage('pg-home')" style="margin-top:.5rem">Shop Our Collection</button>
+  </div>
+</div>
+
+<!-- ═══ BLOG PAGE ═══ -->
+<div id="pg-blog" style="display:none;">
+  <div class="info-page">
+    <div class="page-hdr" style="margin-bottom:1.5rem">
+      <button class="back-btn" onclick="showPage('pg-home')">← Home</button>
+      <h1 class="page-title">Blog</h1>
+    </div>
+    <h2>Stories from Our Kitchen</h2>
+    <p>Tips, tales, and traditions around India's most beloved condiment.</p>
+    <div class="info-card" style="cursor:pointer">
+      <div style="font-size:.68rem;color:var(--mu);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem">June 2025 · 5 min read</div>
+      <h4>Why Mustard Oil Makes the Best Pickle</h4>
+      <p>The science and tradition behind India's favourite pickling oil — and why we'll never switch to refined.</p>
+    </div>
+    <div class="info-card" style="cursor:pointer">
+      <div style="font-size:.68rem;color:var(--mu);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem">May 2025 · 4 min read</div>
+      <h4>How to Store Your Achar to Last 12 Months</h4>
+      <p>A dry spoon, a cool shelf, and a little care — everything you need to keep your pickle perfect all year.</p>
+    </div>
+    <div class="info-card" style="cursor:pointer">
+      <div style="font-size:.68rem;color:var(--mu);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem">April 2025 · 6 min read</div>
+      <h4>5 Dishes That Taste Better with Mango Pickle</h4>
+      <p>From dal-chawal to parathas — the classic pairings that turn a simple meal into something unforgettable.</p>
+    </div>
+    <div class="info-card" style="cursor:pointer">
+      <div style="font-size:.68rem;color:var(--mu);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem">March 2025 · 3 min read</div>
+      <h4>What is Sun Fermentation and Why Does It Matter?</h4>
+      <p>The ancient technique that gives traditional Indian pickles their depth of flavour — and how we practice it today.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT PAGE ═══ -->
+<div id="pg-contact" style="display:none;">
+  <div class="info-page">
+    <div class="page-hdr" style="margin-bottom:1.5rem">
+      <button class="back-btn" onclick="showPage('pg-home')">← Home</button>
+      <h1 class="page-title">Contact Us</h1>
+    </div>
+    <h2>We'd Love to Hear from You</h2>
+    <p>Questions about your order, our products, or just want to say hello? Write to us below or reach us directly.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+      <div class="info-card" style="flex:1;min-width:160px;"><h4>📧 Email</h4><p>hello@tanukiRasoi.in</p></div>
+      <div class="info-card" style="flex:1;min-width:160px;"><h4>📱 WhatsApp</h4><p>+91 98765 43210</p></div>
+      <div class="info-card" style="flex:1;min-width:160px;"><h4>🕐 Hours</h4><p>Mon–Sat, 10am–6pm IST</p></div>
+    </div>
+    <div class="contact-form">
+      <div class="form-field"><label>Name</label><input type="text" placeholder="Your name" style="width:100%"></div>
+      <div class="form-field" style="margin-top:.75rem"><label>Email or Phone</label><input type="text" placeholder="Email / mobile" style="width:100%"></div>
+      <div class="form-field" style="margin-top:.75rem"><label>Message</label><textarea rows="4" placeholder="How can we help?" style="width:100%;resize:none;border:1.5px solid var(--bd);border-radius:8px;padding:.6rem .8rem;font-size:.88rem;background:var(--bg);color:var(--tx);outline:none;font-family:inherit;"></textarea></div>
+      <button class="btn-primary" style="margin-top:1rem;width:100%;text-align:center" onclick="showToast('Message sent! We\'ll reply within 24 hours.')">Send Message</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TRACK ORDER PAGE ═══ -->
+<div id="pg-track" style="display:none;">
+  <div class="info-page">
+    <div class="page-hdr" style="margin-bottom:1.5rem">
+      <button class="back-btn" onclick="showPage('pg-home')">← Home</button>
+      <h1 class="page-title">Track Order</h1>
+    </div>
+    <h2>Where's My Order?</h2>
+    <p>Enter your order ID or phone number to see the live status of your order.</p>
+    <div class="track-input-row">
+      <input type="text" id="track-input" placeholder="Order ID or phone number">
+      <button class="track-btn" onclick="trackOrder()">Track</button>
+    </div>
+    <div id="track-result" style="display:none">
+      <div class="info-card">
+        <h4>Order #TKR<span id="track-order-num">—</span></h4>
+        <p style="margin-bottom:.75rem">Punjabi Mango Pickle · 325g</p>
+        <div style="display:flex;flex-direction:column;gap:.55rem;">
+          <div style="display:flex;align-items:center;gap:.65rem;"><span style="font-size:1.1rem">✅</span><div><div style="font-size:.82rem;font-weight:700">Order Placed</div><div style="font-size:.72rem;color:var(--mu)">Confirmed & being prepared</div></div></div>
+          <div style="display:flex;align-items:center;gap:.65rem;"><span style="font-size:1.1rem">📦</span><div><div style="font-size:.82rem;font-weight:700">Packed</div><div style="font-size:.72rem;color:var(--mu)">Ready for pickup by courier</div></div></div>
+          <div style="display:flex;align-items:center;gap:.65rem;opacity:.4;"><span style="font-size:1.1rem">🚚</span><div><div style="font-size:.82rem;font-weight:700">In Transit</div><div style="font-size:.72rem;color:var(--mu)">On its way to you</div></div></div>
+          <div style="display:flex;align-items:center;gap:.65rem;opacity:.4;"><span style="font-size:1.1rem">🏠</span><div><div style="font-size:.82rem;font-weight:700">Delivered</div><div style="font-size:.72rem;color:var(--mu)">Estimated in 2-3 days</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="info-card" style="margin-top:1rem;">
+      <h4>Need help with your order?</h4>
+      <p>Call or WhatsApp us at <strong>+91 98765 43210</strong> (Mon–Sat, 10am–6pm)</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RETURNS PAGE ═══ -->
+<div id="pg-returns" style="display:none;">
+  <div class="info-page">
+    <div class="page-hdr" style="margin-bottom:1.5rem">
+      <button class="back-btn" onclick="showPage('pg-home')">← Home</button>
+      <h1 class="page-title">Returns & Refunds</h1>
+    </div>
+    <h2>Our 7-Day Happiness Promise</h2>
+    <p>We stand behind every jar. If you're not completely happy with your order, reach out within 7 days of delivery and we'll make it right — no questions asked.</p>
+    <div class="info-card"><h4>✅ Eligible for Return / Refund</h4><p>Damaged or leaking jar on arrival · Wrong product delivered · Missing items from order</p></div>
+    <div class="info-card"><h4>❌ Not Eligible</h4><p>Opened jars (for hygiene reasons, unless damaged) · Change of mind after 7 days · Products stored improperly</p></div>
+    <h3>How to Raise a Return Request</h3>
+    <p>1. Take a photo of the damaged/wrong product.</p>
+    <p>2. WhatsApp us at <strong>+91 98765 43210</strong> with your order ID and the photo.</p>
+    <p>3. We'll arrange a replacement or refund within 3-5 business days.</p>
+    <h3>Refund Timeline</h3>
+    <p>Prepaid orders: Refund to original payment method within 5–7 business days. COD orders: Refund via bank transfer or UPI — we'll collect your details.</p>
+    <button class="btn-primary" onclick="showPage('pg-contact')" style="margin-top:.5rem">Contact Support</button>
+  </div>
+</div>
+
+<!-- ═══ FAQ PAGE ═══ -->
+<div id="pg-faq" style="display:none;">
+  <div class="info-page">
+    <div class="page-hdr" style="margin-bottom:1.5rem">
+      <button class="back-btn" onclick="showPage('pg-home')">← Home</button>
+      <h1 class="page-title">FAQ</h1>
+    </div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-group" style="margin:0;">
+      <div class="acc-item open"><div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">Are there any preservatives in your pickles? <span class="acc-icon">+</span></div><div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">No — zero artificial preservatives. Our pickles are naturally preserved by salt, mustard oil, turmeric and sun fermentation.</p></div></div>
+      <div class="acc-item"><div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">What is the shelf life? <span class="acc-icon">+</span></div><div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">12 months from the date of packaging. After opening, refrigerate and always use a dry spoon.</p></div></div>
+      <div class="acc-item"><div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">Do you offer COD? <span class="acc-icon">+</span></div><div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">Yes! Cash on Delivery is available across India. UPI/prepaid orders get an extra 3% discount.</p></div></div>
+      <div class="acc-item"><div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">How long does delivery take? <span class="acc-icon">+</span></div><div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">Usually 2–4 business days. We ship pan-India via trusted courier partners.</p></div></div>
+      <div class="acc-item"><div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">How do I track my order? <span class="acc-icon">+</span></div><div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">Once shipped, you'll receive a tracking link via SMS and WhatsApp. You can also use our <button onclick="showPage('pg-track')" style="background:none;border:none;color:var(--y);font-weight:700;cursor:pointer;font-size:.82rem;">Track Order</button> page.</p></div></div>
+      <div class="acc-item"><div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">What if my jar arrives damaged? <span class="acc-icon">+</span></div><div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">We'll replace it immediately. Just send us a photo on WhatsApp within 7 days of delivery.</p></div></div>
     </div>
   </div>
 </div>
 
 <script>
-// Page nav
-function goHome(){show('pg-home');hide('pg-prod');scrollTo(0,0);}
-function goProd(){hide('pg-home');show('pg-prod');scrollTo(0,0);}
-function show(id){document.getElementById(id).style.display='';}
-function hide(id){document.getElementById(id).style.display='none';}
+// ─── PRODUCTS DATA ───
+const PRODUCTS = {
+  'mango-pickle':{name:'Homemade Mango Pickle',price:299,mrp:400,emoji:'🫙'},
+  'chilli-pickle':{name:'Red Chilli Pickle',price:349,mrp:400,emoji:'🫙'},
+  'punjabi-mango':{name:'Punjabi Mango Pickle',price:299,mrp:400,emoji:'🫙'},
+  'gift-pack':{name:"Nani's Special Pack",price:599,mrp:699,emoji:'🎁'},
+  'avakaya':{name:'Avakaya Pickle',price:329,mrp:400,emoji:'🫙'},
+};
 
-// Drawer
+// ─── CART STATE ───
+let cart = {};
+let selectedVariant = {size:'325g Jar',price:299};
+let selectedPay = 'cod';
+let lastOrderId = '';
+
+// ─── PAGE NAVIGATION ───
+const ALL_PAGES = ['pg-home','pg-prod','pg-cart','pg-checkout','pg-confirm','pg-story','pg-blog','pg-contact','pg-track','pg-returns','pg-faq'];
+function showPage(id){
+  ALL_PAGES.forEach(p=>{
+    const el=document.getElementById(p);
+    if(el) el.style.display = p===id ? '' : 'none';
+  });
+  scrollTo(0,0);
+  if(id==='pg-cart') renderCart();
+  if(id==='pg-checkout') renderOrderMini();
+}
+function goHome(){showPage('pg-home');}
+function goProd(){showPage('pg-prod');}
+
+// ─── CART FUNCTIONS ───
+function addToCart(productId, qty){
+  const p = PRODUCTS[productId];
+  if(!p) return;
+  if(cart[productId]) cart[productId].qty += qty;
+  else cart[productId] = {qty, price:p.price, name:p.name, emoji:p.emoji};
+  updateCartBadge();
+  showToast(p.name + ' added to cart 🛒');
+}
+
+function addProductToCart(){
+  const qtyEl = document.getElementById('dqty') || document.getElementById('sqty');
+  const qty = parseInt(qtyEl ? (qtyEl.value || qtyEl.textContent) : '1') || 1;
+  if(cart['punjabi-mango']) cart['punjabi-mango'].qty += qty;
+  else cart['punjabi-mango'] = {qty, price:selectedVariant.price, name:'Punjabi Mango Pickle ('+selectedVariant.size+')', emoji:'🫙'};
+  updateCartBadge();
+  showToast('Added to cart 🛒');
+}
+
+function removeFromCart(id){
+  delete cart[id];
+  updateCartBadge();
+  renderCart();
+}
+
+function updateCartQty(id, delta){
+  if(!cart[id]) return;
+  cart[id].qty += delta;
+  if(cart[id].qty <= 0) delete cart[id];
+  updateCartBadge();
+  renderCart();
+}
+
+function updateCartBadge(){
+  const total = Object.values(cart).reduce((s,v)=>s+v.qty,0);
+  const badge = document.getElementById('cart-badge');
+  if(!badge) return;
+  if(total > 0){badge.textContent=total;badge.style.display='flex';}
+  else badge.style.display='none';
+}
+
+function getCartTotals(){
+  const subtotal = Object.values(cart).reduce((s,v)=>s+v.qty*v.price,0);
+  const totalQty = Object.values(cart).reduce((s,v)=>s+v.qty,0);
+  const delivery = subtotal >= 499 ? 0 : 50;
+  const gifts3 = totalQty >= 3;
+  const tote6 = totalQty >= 6;
+  const baseTotal = subtotal + delivery;
+  const upiTotal = Math.round(baseTotal * 0.97);
+  return {subtotal, delivery, baseTotal, upiTotal, totalQty, gifts3, tote6};
+}
+
+function renderCart(){
+  const el = document.getElementById('cart-items');
+  const sumEl = document.getElementById('cart-summary');
+  if(!el || !sumEl) return;
+  const keys = Object.keys(cart);
+  if(keys.length === 0){
+    el.innerHTML = '<div style="text-align:center;padding:3rem 1rem;color:var(--mu)"><div style="font-size:4rem;margin-bottom:1rem">🛒</div><p style="font-size:.95rem;margin-bottom:.5rem">Your cart is empty</p><p style="font-size:.82rem">Add some pickle to get started!</p><button class="btn-primary" style="margin-top:1.25rem" onclick="showPage(\'pg-home\')">Shop Now</button></div>';
+    sumEl.innerHTML = '';
+    return;
+  }
+  el.innerHTML = keys.map(k=>{
+    const item=cart[k];
+    return `<div class="cart-item">
+      <div class="ci-emoji">${item.emoji}</div>
+      <div class="ci-info">
+        <div class="ci-name">${item.name}</div>
+        <div class="ci-price">₹${item.price} each</div>
+        <div class="ci-qty">
+          <button class="cq-btn" onclick="updateCartQty('${k}',-1)">−</button>
+          <div class="cq-num">${item.qty}</div>
+          <button class="cq-btn" onclick="updateCartQty('${k}',1)">+</button>
+        </div>
+      </div>
+      <div class="ci-right">
+        <div class="ci-total">₹${item.price*item.qty}</div>
+        <button class="ci-remove" onclick="removeFromCart('${k}')">✕ Remove</button>
+      </div>
+    </div>`;
+  }).join('');
+  const {subtotal,delivery,baseTotal,upiTotal,gifts3,tote6} = getCartTotals();
+  let discountsHTML = '';
+  if(delivery===0) discountsHTML += '<div class="disc-row">🚚 Free Delivery Applied!</div>';
+  if(gifts3) discountsHTML += '<div class="disc-row">🎁 3 Free Gifts Included</div>';
+  if(tote6) discountsHTML += '<div class="disc-row">👜 Free Tote Bag Included</div>';
+  const nearFree = 499 - subtotal;
+  sumEl.innerHTML = `<div class="cart-summary">
+    <div style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:.85rem">Order Summary</div>
+    <div class="cs-row"><span>Subtotal</span><span>₹${subtotal}</span></div>
+    <div class="cs-row"><span>Delivery</span><span>${delivery===0?'<span style="text-decoration:line-through;color:var(--mu)">₹50</span> <span style="color:var(--g);font-weight:700">FREE</span>':'₹50'}</span></div>
+    ${discountsHTML}
+    <div class="cs-row cs-total"><span>Total (COD)</span><span>₹${baseTotal}</span></div>
+    <div class="cs-row" style="margin-top:.3rem;margin-bottom:.9rem"><span style="color:var(--g);font-weight:700">Total (UPI/Prepaid)</span><span style="color:var(--g);font-weight:700">₹${upiTotal} <span style="font-size:.68rem;background:rgba(61,122,40,.1);padding:.1rem .3rem;border-radius:3px;">3% off</span></span></div>
+    ${nearFree>0?`<div style="font-size:.73rem;background:rgba(242,184,48,.12);padding:.5rem .65rem;border-radius:6px;margin-bottom:.85rem;color:#7A5000">🛍️ Add ₹${nearFree} more for <strong>FREE delivery</strong>!</div>`:''}
+    <button class="btn-primary" style="width:100%;text-align:center;padding:.9rem;font-size:.95rem;" onclick="showPage('pg-checkout')">Proceed to Checkout →</button>
+    <button onclick="showPage('pg-home')" style="width:100%;text-align:center;padding:.6rem;background:none;border:none;color:var(--mu);font-size:.82rem;cursor:pointer;margin-top:.6rem;">← Continue Shopping</button>
+  </div>`;
+}
+
+function renderOrderMini(){
+  const el = document.getElementById('order-mini');
+  if(!el) return;
+  const keys = Object.keys(cart);
+  if(keys.length===0){el.innerHTML='<p style="color:var(--mu);font-size:.85rem">No items in cart.</p>';return;}
+  const {subtotal,delivery,baseTotal,upiTotal} = getCartTotals();
+  el.innerHTML = `<h3>Order Summary</h3>
+    ${keys.map(k=>`<div class="om-item"><span>${cart[k].name} ×${cart[k].qty}</span><span>₹${cart[k].price*cart[k].qty}</span></div>`).join('')}
+    <div class="om-divider"></div>
+    <div class="om-item"><span>Delivery</span><span>${delivery===0?'<span style="color:var(--g)">FREE</span>':'₹50'}</span></div>
+    <div class="om-item om-total"><span>COD Total</span><span>₹${baseTotal}</span></div>
+    <div class="om-item" style="color:var(--g);font-weight:700;margin-top:.25rem"><span>UPI Total</span><span>₹${upiTotal}</span></div>`;
+  // update UPI sub label
+  document.getElementById('upi-sub').textContent = `Save ₹${baseTotal-upiTotal} (3% off)`;
+}
+
+function selectPay(method){
+  selectedPay = method;
+  document.getElementById('pay-cod').classList.toggle('active', method==='cod');
+  document.getElementById('pay-upi').classList.toggle('active', method==='upi');
+}
+
+function placeOrder(){
+  const name = document.getElementById('co-name')?.value.trim();
+  const phone = document.getElementById('co-phone')?.value.trim();
+  const addr = document.getElementById('co-addr')?.value.trim();
+  if(!name || !phone || !addr){showToast('Please fill name, phone & address');return;}
+  const orderId = 'TKR' + Math.floor(10000+Math.random()*90000);
+  lastOrderId = orderId;
+  const d = new Date(); d.setDate(d.getDate()+4);
+  const dateStr = d.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+  showPage('pg-confirm');
+  document.getElementById('order-id-box').textContent = 'Order #' + orderId;
+  document.getElementById('est-delivery').textContent = 'By ' + dateStr;
+}
+
+function trackOrder(){
+  const val = document.getElementById('track-input')?.value.trim();
+  if(!val){showToast('Please enter order ID or phone');return;}
+  const num = lastOrderId || ('TKR'+Math.floor(10000+Math.random()*90000));
+  document.getElementById('track-order-num').textContent = num.replace('TKR','');
+  document.getElementById('track-result').style.display = '';
+}
+
+// ─── TOAST ───
+function showToast(msg){
+  let t = document.getElementById('toast');
+  if(!t){
+    t = document.createElement('div');
+    t.id = 'toast';
+    t.style.cssText = 'position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(10px);background:#1A0F00;color:#fff;padding:.65rem 1.3rem;border-radius:999px;font-size:.82rem;font-weight:600;z-index:9999;opacity:0;transition:opacity .25s,transform .25s;white-space:nowrap;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.25);';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = '1';
+  t.style.transform = 'translateX(-50%) translateY(0)';
+  clearTimeout(t._timer);
+  t._timer = setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(-50%) translateY(10px)';},2500);
+}
+
+// ─── DRAWER ───
 function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('open');}
 function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
 
-// Gallery
+// ─── GALLERY ───
 const galItems=[
   {emoji:'🫙',bg:'linear-gradient(135deg,#FFF0D0,#FFE0A0)'},
   {emoji:'🥭',bg:'linear-gradient(135deg,#FFF5D0,#FFE890)'},
@@ -830,49 +1323,44 @@ function updateGal(){
   const m=document.getElementById('gal-main');
   const item=galItems[galIdx];
   m.style.background=item.bg;
-  // Update emoji (first text node)
   m.childNodes[0].textContent=item.emoji;
   document.querySelectorAll('.gal-thumb').forEach((t,i)=>t.classList.toggle('active',i===galIdx));
 }
 function galNext(){galIdx=(galIdx+1)%galItems.length;updateGal();}
 function galPrev(){galIdx=(galIdx-1+galItems.length)%galItems.length;updateGal();}
-function setGal(thumb,emoji,bg){
+function setGal(thumb){
   galIdx=Array.from(document.querySelectorAll('.gal-thumb')).indexOf(thumb);
   updateGal();
 }
 
-// Qty
+// ─── QTY ───
 function chQty(mode,d){
   const id=mode==='d'?'dqty':'sqty';
   const el=document.getElementById(id);
   let v=parseInt(el.textContent||el.value)+d;
   v=Math.min(99,Math.max(1,v));
-  if(el.tagName==='INPUT')el.value=v; else el.textContent=v;
+  if(el.tagName==='INPUT') el.value=v; else el.textContent=v;
 }
 
-// Sticky var
-function sSelectVar(btn){
+// ─── VARIANT SELECTORS ───
+function sSelectVar(btn,size,price){
   document.querySelectorAll('.sticky-bar .svar').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+  selectedVariant = {size, price};
 }
-
-// Desktop var
-function dSelectVar(el){
+function dSelectVar(el,price){
   document.querySelectorAll('.dvar').forEach(v=>v.classList.remove('active'));
   el.classList.add('active');
+  if(price) selectedVariant.price = price;
 }
 
-// Accordion
-function toggleAcc(hdr){
-  const item=hdr.parentElement;
-  item.classList.toggle('open');
-}
+// ─── ACCORDION ───
+function toggleAcc(hdr){hdr.parentElement.classList.toggle('open');}
 
-// Category pills
+// ─── CATEGORY PILLS ───
 document.querySelectorAll('.cat-pill').forEach(p=>p.addEventListener('click',function(){
   document.querySelectorAll('.cat-pill').forEach(x=>x.classList.remove('active'));
   this.classList.add('active');
 }));
 
-// Theme toggle (global button removed — clean UI)
 </script>
