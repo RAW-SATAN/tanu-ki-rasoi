@@ -1,0 +1,878 @@
+<title>Tanu ki Rasoi — Ghar Jaisa Achar</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#fff;--bg2:#FFF8ED;--card:#FFF2D8;--bd:#E8D090;--tx:#1A0F00;--mu:#7A6035;--y:#F2B830;--r:#C8391A;--g:#3D7A28;}
+:root[data-theme="dark"]{--bg:#13100D;--bg2:#1C1610;--card:#251C12;--bd:#3C2C1A;--tx:#F3ECD8;--mu:#9C8762;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+button,input{font-family:inherit;}
+
+/* OFFERS MARQUEE */
+.offers-bar{background:var(--y);color:#1A0F00;font-size:.75rem;font-weight:600;height:32px;overflow:hidden;display:flex;align-items:center;}
+.offers-track{display:flex;animation:marquee 30s linear infinite;white-space:nowrap;}
+.offers-track span{padding:0 1.5rem;}
+.offers-track .sep{padding:0;opacity:.4;}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.offers-track{animation:none;overflow-x:auto;}}
+
+/* NAV */
+.site-nav{background:var(--bg);border-bottom:1px solid var(--bd);padding:0 1rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:32px;z-index:100;}
+.nav-logo{font-family:Georgia,serif;font-size:1.35rem;font-weight:bold;color:var(--y);cursor:pointer;letter-spacing:-.02em;}
+.nav-left,.nav-right{display:flex;align-items:center;gap:.5rem;width:70px;}
+.nav-right{justify-content:flex-end;}
+.nav-icon{background:none;border:none;cursor:pointer;color:var(--tx);font-size:1.2rem;display:flex;align-items:center;position:relative;padding:.25rem;}
+.cart-badge{position:absolute;top:-4px;right:-4px;background:var(--r);color:#fff;border-radius:50%;width:17px;height:17px;font-size:.58rem;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.nav-links-desk{display:none;}
+@media(min-width:768px){
+  .site-nav{padding:0 2rem;height:66px;top:32px;}
+  .nav-logo{font-size:1.5rem;}
+  .nav-left{width:auto;gap:0;}
+  .hamburger-btn{display:none;}
+  .nav-links-desk{display:flex;gap:2rem;list-style:none;padding-left:2rem;flex:1;}
+  .nav-links-desk a{color:var(--mu);font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;transition:color .2s;}
+  .nav-links-desk a:hover{color:var(--tx);}
+  .nav-right{width:auto;gap:.75rem;}
+}
+
+/* SEARCH */
+.search-wrap{background:var(--bg);padding:.65rem 1rem;border-bottom:1px solid var(--bd);}
+.search-box{display:flex;align-items:center;gap:.6rem;border:1.5px solid var(--bd);border-radius:999px;padding:.55rem 1.1rem;background:var(--bg);}
+.search-box input{flex:1;border:none;outline:none;background:transparent;font-size:.88rem;color:var(--tx);}
+.search-box input::placeholder{color:var(--mu);}
+@media(min-width:768px){.search-wrap{max-width:960px;margin:0 auto;border-bottom:none;padding:.85rem 2rem;}}
+
+/* DRAWER */
+.drawer{position:fixed;top:0;left:0;width:280px;height:100vh;background:var(--bg);z-index:500;transform:translateX(-100%);transition:transform .28s ease;padding:1.5rem;overflow-y:auto;box-shadow:4px 0 24px rgba(0,0,0,.12);}
+.drawer.open{transform:translateX(0);}
+.drawer-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--tx);margin-bottom:1.75rem;display:block;}
+.drawer ul{list-style:none;}
+.drawer li{border-bottom:1px solid var(--bd);}
+.drawer li a{display:block;padding:.9rem 0;font-weight:600;font-size:.92rem;}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:499;opacity:0;pointer-events:none;transition:opacity .28s;}
+.overlay.open{opacity:1;pointer-events:all;}
+
+/* ─── HOME ─── */
+.hero-sec{background:var(--bg2);padding:2rem 1.1rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.hero-sec::after{content:'';position:absolute;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(242,184,48,.18),transparent 70%);top:-60px;right:-60px;pointer-events:none;}
+.eyebrow{display:inline-block;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--y);font-weight:700;background:rgba(242,184,48,.13);padding:.22rem .7rem;border-radius:4px;margin-bottom:.85rem;}
+.hero-jar{font-size:5.5rem;display:block;margin-bottom:1rem;animation:bob 3.5s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.hero-jar{animation:none}}
+.hero-sec h1{font-family:Georgia,serif;font-size:2rem;line-height:1.15;letter-spacing:-.02em;margin-bottom:.75rem;}
+.hero-sec h1 em{font-style:normal;color:var(--y);}
+.hero-sec p{color:var(--mu);font-size:.88rem;line-height:1.72;max-width:38ch;margin:0 auto 1.5rem;}
+.btn-primary{display:inline-block;background:var(--y);color:#1A0F00;border:none;padding:.8rem 1.75rem;border-radius:8px;font-size:.92rem;font-weight:700;cursor:pointer;transition:opacity .2s;}
+.btn-primary:hover{opacity:.87;}
+@media(min-width:768px){
+  .hero-sec{display:grid;grid-template-columns:1fr 1fr;align-items:center;text-align:left;padding:4rem 3rem;gap:2rem;}
+  .hero-sec h1{font-size:3.2rem;}
+  .hero-sec p{margin:0 0 1.5rem;}
+  .hero-jar{font-size:9rem;order:2;margin:0;}
+  .hero-sec::after{display:none;}
+}
+
+/* TRUST SCROLL */
+.trust-scroll{overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--bd);}
+.trust-scroll::-webkit-scrollbar{display:none;}
+.trust-inner{display:flex;width:max-content;padding:.9rem 1rem;}
+.trust-item{display:flex;align-items:center;gap:.5rem;padding:0 1.1rem;border-right:1px solid var(--bd);flex-shrink:0;}
+.trust-item:last-child{border-right:none;}
+.trust-item strong{display:block;font-size:.8rem;}
+.trust-item span{font-size:.7rem;color:var(--mu);white-space:nowrap;}
+.ti-icon{font-size:1.15rem;}
+
+/* SECTIONS */
+.sec{padding:2rem 1rem;}
+.sec-alt{background:var(--bg2);}
+.sec-h{font-family:Georgia,serif;font-size:1.45rem;letter-spacing:-.02em;margin-bottom:1.1rem;}
+.sec-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;}
+.sec-row a{color:var(--y);font-size:.82rem;font-weight:600;}
+@media(min-width:768px){.sec{padding:3.5rem 2rem;}.sec-h{font-size:2rem;}}
+
+/* CATEGORY PILLS */
+.cat-scroll{display:flex;gap:.6rem;overflow-x:auto;scrollbar-width:none;padding-bottom:.25rem;}
+.cat-scroll::-webkit-scrollbar{display:none;}
+.cat-pill{flex-shrink:0;padding:.48rem 1rem;border-radius:999px;border:1.5px solid var(--bd);background:var(--bg);font-size:.8rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;}
+.cat-pill:hover,.cat-pill.active{background:var(--y);color:#1A0F00;border-color:var(--y);}
+
+/* PRODUCTS GRID */
+.prod-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+@media(min-width:600px){.prod-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:900px){.prod-grid{grid-template-columns:repeat(4,1fr);gap:1.1rem;}}
+.prod-card{background:var(--bg);border:1px solid var(--bd);border-radius:12px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;}
+.prod-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.1);}
+.prod-img{height:145px;display:flex;align-items:center;justify-content:center;font-size:3.8rem;}
+@media(min-width:768px){.prod-img{height:185px;font-size:5rem;}}
+.prod-body{padding:.8rem;flex:1;display:flex;flex-direction:column;}
+.prod-tag{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.12rem .42rem;border-radius:3px;margin-bottom:.48rem;}
+.t-best{background:rgba(242,184,48,.16);color:#8B6000;}
+.t-hot{background:rgba(200,57,26,.12);color:var(--r);}
+.t-mild{background:rgba(61,122,40,.12);color:var(--g);}
+.t-gift{background:rgba(242,184,48,.12);color:#7A5000;}
+.prod-name{font-family:Georgia,serif;font-size:.88rem;line-height:1.3;margin-bottom:.28rem;font-weight:bold;}
+.prod-sub{font-size:.7rem;color:var(--mu);margin-bottom:.5rem;line-height:1.4;}
+.stars{display:flex;align-items:center;gap:.22rem;font-size:.7rem;color:var(--y);margin-bottom:.6rem;}
+.stars span{color:var(--mu);}
+.prod-price{display:flex;align-items:baseline;gap:.35rem;margin-top:auto;flex-wrap:wrap;}
+.p-cur{font-size:1rem;font-weight:700;font-variant-numeric:tabular-nums;}
+.p-mrp{font-size:.72rem;color:var(--mu);text-decoration:line-through;font-variant-numeric:tabular-nums;}
+.p-off{font-size:.7rem;font-weight:700;color:var(--g);}
+.card-btn{width:100%;margin-top:.7rem;background:var(--bg2);border:1px solid var(--bd);color:var(--tx);padding:.52rem;border-radius:6px;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.card-btn:hover{background:var(--y);color:#1A0F00;border-color:var(--y);}
+
+/* PROMISE */
+.promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+@media(min-width:768px){.promise-grid{grid-template-columns:repeat(4,1fr);}}
+.promise-card{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:1.2rem .9rem;text-align:center;}
+.promise-card .picon{font-size:1.75rem;display:block;margin-bottom:.55rem;}
+.promise-card h3{font-family:Georgia,serif;font-size:.88rem;margin-bottom:.35rem;}
+.promise-card p{font-size:.73rem;color:var(--mu);line-height:1.55;}
+
+/* PROCESS */
+.process-list{display:flex;flex-direction:column;gap:1.1rem;}
+@media(min-width:768px){.process-list{flex-direction:row;}}
+.proc-item{display:flex;gap:.85rem;align-items:flex-start;}
+@media(min-width:768px){.proc-item{flex-direction:column;align-items:center;text-align:center;flex:1;}}
+.proc-dot{width:38px;height:38px;border-radius:50%;background:var(--y);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.proc-n{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);font-weight:700;}
+.proc-nm{font-weight:700;font-size:.87rem;margin:.18rem 0;}
+.proc-d{font-size:.75rem;color:var(--mu);line-height:1.5;}
+
+/* REVIEWS */
+.rev-list{display:flex;flex-direction:column;gap:.9rem;}
+@media(min-width:768px){.rev-list{flex-direction:row;}}
+.rev-card{background:var(--bg);border:1px solid var(--bd);border-radius:12px;padding:1.1rem;flex:1;}
+.rev-stars{color:var(--y);margin-bottom:.5rem;font-size:.8rem;}
+.rev-text{font-size:.83rem;line-height:1.72;margin-bottom:.8rem;font-style:italic;}
+.rev-author{display:flex;align-items:center;gap:.5rem;}
+.rev-av{width:30px;height:30px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;}
+.rev-name{font-weight:700;font-size:.8rem;}
+.rev-meta{font-size:.68rem;color:var(--mu);}
+
+/* CTA */
+.cta-sec{background:var(--y);color:#1A0F00;text-align:center;padding:2.5rem 1.25rem;}
+.cta-sec h2{font-family:Georgia,serif;font-size:1.6rem;letter-spacing:-.02em;margin-bottom:.65rem;}
+.cta-sec p{font-size:.87rem;margin-bottom:1.4rem;opacity:.7;}
+.btn-dk{background:#1A0F00;color:var(--y);padding:.8rem 2rem;border:none;border-radius:8px;font-size:.92rem;font-weight:700;cursor:pointer;}
+@media(min-width:768px){.cta-sec h2{font-size:2.4rem;}.cta-sec{padding:4rem 2rem;}}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--bd);padding:2rem 1.1rem 1.5rem;}
+.foot-logo{font-family:Georgia,serif;font-size:1.3rem;font-weight:bold;color:var(--y);margin-bottom:.65rem;}
+.foot-brand p{color:var(--mu);font-size:.78rem;line-height:1.7;margin-bottom:1.25rem;}
+.foot-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem;}
+.foot-col h4{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.7rem;}
+.foot-col ul{list-style:none;}
+.foot-col li{margin-bottom:.45rem;}
+.foot-col a{color:var(--tx);font-size:.78rem;opacity:.7;}
+.foot-col a:hover{opacity:1;}
+.foot-btm{border-top:1px solid var(--bd);padding-top:1.1rem;}
+.foot-btm p{color:var(--mu);font-size:.7rem;margin-bottom:.2rem;}
+@media(min-width:768px){
+  footer{padding:3rem 2rem 2rem;}
+  .foot-inner-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;}
+  .foot-brand p{margin-bottom:0;}
+  .foot-cols{display:contents;}
+  .foot-btm{display:flex;justify-content:space-between;align-items:center;}
+}
+
+/* ─── PRODUCT PAGE ─── */
+#pg-prod{padding-bottom:148px;}
+@media(min-width:768px){#pg-prod{padding-bottom:0;}}
+
+.breadcrumb{display:flex;gap:.38rem;font-size:.72rem;color:var(--mu);padding:.85rem 1rem 0;flex-wrap:wrap;align-items:center;}
+.breadcrumb a{cursor:pointer;}
+.breadcrumb a:hover{color:var(--tx);}
+.bc-sep{opacity:.4;}
+
+/* Gallery */
+.gal-main{position:relative;background:#FFF8F0;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:9rem;overflow:hidden;transition:background .3s;}
+.gal-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.92);border:1px solid var(--bd);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;z-index:5;}
+.gal-arrow.prev{left:.65rem;}
+.gal-arrow.next{right:.65rem;}
+.gal-thumbs{display:flex;gap:.5rem;padding:.65rem 1rem;overflow-x:auto;scrollbar-width:none;}
+.gal-thumbs::-webkit-scrollbar{display:none;}
+.gal-thumb{flex-shrink:0;width:60px;height:60px;border:2px solid var(--bd);border-radius:8px;background:#FFF8F0;display:flex;align-items:center;justify-content:center;font-size:1.7rem;cursor:pointer;transition:border-color .2s;}
+.gal-thumb.active{border-color:var(--y);}
+@media(min-width:768px){
+  .prod-layout{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:2rem 2rem;align-items:start;}
+  .gal-main{border-radius:12px;border:1px solid var(--bd);}
+}
+
+/* Product Info */
+.prod-info{padding:1rem 1rem 0;}
+@media(min-width:768px){.prod-info{padding:0;}}
+.pd-eyebrow{font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--y);font-weight:700;margin-bottom:.45rem;}
+.pd-title{font-family:Georgia,serif;font-size:1.45rem;line-height:1.2;letter-spacing:-.02em;margin-bottom:.8rem;}
+@media(min-width:768px){.pd-title{font-size:2rem;}}
+
+/* Ratings */
+.rating-row{display:flex;align-items:center;gap:.45rem;font-size:.8rem;margin-bottom:.22rem;}
+.ry{color:var(--y);}
+.rg{color:#CCC;}
+.rc{color:var(--mu);}
+.amazon-badge{display:inline-flex;align-items:center;gap:.35rem;background:#000;color:#fff;padding:.2rem .55rem;border-radius:4px;font-size:.68rem;font-weight:700;margin:.3rem 0 .85rem;}
+
+/* Attribute badges */
+.attr-row{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:.9rem;}
+.attr-badge{border:1.5px solid var(--bd);border-radius:10px;padding:.45rem .6rem;text-align:center;min-width:68px;}
+.ab-icon{font-size:1.2rem;display:block;margin-bottom:.18rem;}
+.ab-label{font-size:.6rem;font-weight:600;display:block;line-height:1.3;color:var(--mu);}
+
+.urgency{font-size:.8rem;font-weight:600;color:var(--r);margin-bottom:.85rem;}
+
+/* Price */
+.price-row{display:flex;align-items:baseline;gap:.55rem;flex-wrap:wrap;margin-bottom:.28rem;}
+.big-price{font-size:1.7rem;font-weight:700;color:var(--r);font-variant-numeric:tabular-nums;}
+.big-mrp{color:var(--mu);text-decoration:line-through;font-size:.95rem;font-variant-numeric:tabular-nums;}
+.price-tax{font-size:.72rem;color:var(--mu);margin-bottom:.75rem;}
+@media(min-width:768px){.big-price{font-size:2rem;}}
+
+.shelf-row{font-size:.8rem;font-weight:600;padding:.55rem .8rem;background:var(--bg2);border-radius:6px;border-left:3px solid var(--y);margin-bottom:.9rem;}
+
+/* Feature icons */
+.feat-icons{display:flex;gap:.9rem;margin-bottom:1rem;flex-wrap:wrap;}
+.feat-item{display:flex;flex-direction:column;align-items:center;text-align:center;width:65px;}
+.feat-icon{font-size:1.6rem;margin-bottom:.25rem;}
+.feat-label{font-size:.58rem;font-weight:600;line-height:1.3;color:var(--mu);}
+
+/* Delivery */
+.del-box{border:1px solid var(--bd);border-radius:10px;padding:.8rem;margin-bottom:.9rem;}
+.del-hdr{display:flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;margin-bottom:.3rem;}
+.del-info{font-size:.76rem;color:var(--mu);}
+.del-info strong{color:var(--g);}
+.change-pin{color:var(--y);font-size:.75rem;font-weight:600;cursor:pointer;display:block;margin-top:.3rem;}
+
+/* Offers panel */
+.offers-panel{border:1.5px solid var(--y);border-radius:12px;padding:.9rem;margin:0 1rem .9rem;}
+@media(min-width:768px){.offers-panel{margin:0 0 .9rem;}}
+.offers-panel-h{font-size:.88rem;font-weight:700;display:flex;align-items:center;gap:.4rem;margin-bottom:.85rem;}
+.offer-item{background:var(--bg2);border-radius:8px;padding:.6rem .8rem;margin-bottom:.6rem;}
+.offer-hdr{display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:.78rem;margin-bottom:.22rem;}
+.offer-tag{background:var(--bg);border:1px solid var(--bd);padding:.08rem .38rem;border-radius:4px;font-size:.62rem;color:var(--mu);font-weight:400;}
+.offer-desc{font-size:.72rem;color:var(--mu);}
+
+/* ACCORDIONS */
+.acc-group{border-top:1px solid var(--bd);margin:0 1rem;}
+@media(min-width:768px){.acc-group{margin:0 2rem;max-width:1160px;margin:0 auto;padding:0 2rem;}}
+.acc-item{border-bottom:1px solid var(--bd);}
+.acc-hdr{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;cursor:pointer;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;user-select:none;}
+.acc-icon{font-size:1.1rem;font-weight:300;transition:transform .2s;flex-shrink:0;}
+.acc-item.open .acc-icon{transform:rotate(45deg);}
+.acc-body{display:none;padding-bottom:1rem;}
+.acc-item.open .acc-body{display:block;}
+
+.ing-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;}
+.ing-list li{display:flex;align-items:center;gap:.38rem;font-size:.8rem;}
+
+/* Desktop variant (visible ≥768) */
+.desktop-vars{display:none;}
+@media(min-width:768px){
+  .desktop-vars{display:block;margin-top:1rem;}
+  .dvar-row{display:flex;gap:.7rem;margin-bottom:1.25rem;}
+  .dvar{flex:1;border:2px solid var(--bd);border-radius:10px;padding:.7rem;text-align:center;cursor:pointer;background:var(--bg);transition:border-color .2s;}
+  .dvar.active{border-color:var(--y);background:rgba(242,184,48,.08);}
+  .dvar-best{font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g);margin-bottom:.22rem;}
+  .dvar-sz{font-weight:700;font-size:.9rem;}
+  .dvar-pr{font-size:.82rem;font-weight:700;font-variant-numeric:tabular-nums;}
+  .dvar-of{font-size:.7rem;color:var(--g);}
+  .dqty-row{display:flex;gap:.75rem;align-items:center;margin-bottom:1rem;}
+  .dqty-ctrl{display:flex;align-items:center;border:1.5px solid var(--bd);border-radius:8px;overflow:hidden;}
+  .dqty-btn{width:36px;height:42px;background:var(--bg2);border:none;cursor:pointer;font-size:1.05rem;font-weight:700;}
+  .dqty-num{width:42px;text-align:center;font-size:.9rem;font-weight:700;border:none;background:transparent;color:var(--tx);border-left:1px solid var(--bd);border-right:1px solid var(--bd);}
+  .dcart-btn{flex:1;background:var(--r);color:#fff;border:none;padding:.78rem;border-radius:8px;font-size:.92rem;font-weight:700;cursor:pointer;}
+  .dcart-btn:hover{opacity:.9;}
+}
+
+/* Horizontal product scroll */
+.prod-scroll-wrap{overflow-x:auto;scrollbar-width:none;padding:0 1rem;}
+.prod-scroll-wrap::-webkit-scrollbar{display:none;}
+.prod-scroll{display:flex;gap:.75rem;width:max-content;}
+.prod-scroll .prod-card{width:155px;}
+.prod-scroll .prod-img{height:120px;font-size:3.2rem;}
+@media(min-width:768px){.prod-scroll-wrap{padding:0 2rem;}.prod-scroll .prod-card{width:200px;}.prod-scroll .prod-img{height:160px;font-size:4rem;}}
+
+/* How it's made */
+.how-sec{background:var(--bg2);}
+.how-step{display:flex;gap:.85rem;align-items:flex-start;margin-bottom:1.3rem;}
+.how-num{width:34px;height:34px;border-radius:50%;background:var(--y);color:#1A0F00;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.how-content h4{font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.22rem;}
+.how-content p{font-size:.76rem;color:var(--mu);line-height:1.6;}
+
+/* FAQ */
+.faq-group{border-top:1px solid var(--bd);margin:0 1rem;}
+@media(min-width:768px){.faq-group{max-width:1160px;margin:0 auto;padding:0 2rem;}}
+
+/* Rating breakdown */
+.rating-overall{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.1rem;flex-wrap:wrap;}
+.rating-big{font-family:Georgia,serif;font-size:2.8rem;font-weight:bold;line-height:1;}
+.rating-stars-big{color:var(--y);font-size:1.1rem;}
+.rating-basis{font-size:.75rem;color:var(--mu);}
+.bar-row{display:flex;align-items:center;gap:.55rem;margin-bottom:.35rem;}
+.bar-label{font-size:.7rem;color:var(--y);width:56px;}
+.bar-track{flex:1;height:7px;background:var(--bd);border-radius:999px;overflow:hidden;}
+.bar-fill{height:100%;background:var(--y);border-radius:999px;}
+.bar-count{font-size:.7rem;color:var(--mu);width:26px;text-align:right;font-variant-numeric:tabular-nums;}
+.write-rev-btn{width:100%;background:var(--y);color:#1A0F00;border:none;padding:.82rem;border-radius:999px;font-weight:700;font-size:.9rem;cursor:pointer;margin-bottom:1.25rem;}
+
+/* STICKY BOTTOM BAR */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--bg);border-top:1.5px solid var(--bd);padding:.55rem .85rem;display:flex;flex-direction:column;gap:.5rem;box-shadow:0 -4px 20px rgba(0,0,0,.1);}
+@media(min-width:768px){.sticky-bar{display:none;}}
+.sticky-vars{display:flex;gap:.5rem;}
+.svar{flex:1;background:var(--bg);border:2px solid var(--bd);border-radius:10px;padding:.4rem .45rem;text-align:center;cursor:pointer;transition:all .2s;font-family:inherit;}
+.svar.active{background:var(--y);border-color:var(--y);}
+.svar-lbl{font-weight:700;font-size:.75rem;color:var(--tx);}
+.svar.active .svar-lbl{color:#1A0F00;}
+.svar-pr{font-size:.68rem;color:var(--mu);font-variant-numeric:tabular-nums;}
+.svar.active .svar-pr{color:#1A0F00;}
+.sticky-bot{display:flex;gap:.55rem;align-items:center;}
+.sty-qty{display:flex;align-items:center;border:1.5px solid var(--bd);border-radius:8px;overflow:hidden;}
+.sqbtn{width:34px;height:38px;background:var(--bg2);border:none;cursor:pointer;font-size:1rem;font-weight:700;color:var(--tx);}
+.sqnum{width:34px;text-align:center;font-size:.88rem;font-weight:700;border:none;background:transparent;color:var(--tx);border-left:1px solid var(--bd);border-right:1px solid var(--bd);}
+.sticky-cart{flex:1;background:var(--r);color:#fff;border:none;padding:.66rem;border-radius:8px;font-size:.92rem;font-weight:700;cursor:pointer;letter-spacing:.02em;}
+</style>
+
+<!-- OFFERS MARQUEE -->
+<div class="offers-bar">
+  <div class="offers-track">
+    <span>Extra 3% Off on Prepaid orders</span><span class="sep">|</span>
+    <span>Buy 2 Get Freeshipping</span><span class="sep">|</span>
+    <span>Buy 6 Get Tote Bag Free</span><span class="sep">|</span>
+    <span>Buy 3 Get 3 Gifts</span><span class="sep">|</span>
+    <span>Offers automatically applied at checkout</span><span class="sep">|</span>
+    <span>Extra 3% Off on Prepaid orders</span><span class="sep">|</span>
+    <span>Buy 2 Get Freeshipping</span><span class="sep">|</span>
+    <span>Buy 6 Get Tote Bag Free</span><span class="sep">|</span>
+    <span>Buy 3 Get 3 Gifts</span><span class="sep">|</span>
+    <span>Offers automatically applied at checkout</span><span class="sep">|</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-left">
+    <button class="nav-icon hamburger-btn" onclick="openDrawer()" aria-label="Menu">☰</button>
+  </div>
+  <div class="nav-logo" onclick="goHome()">Tanu ki Rasoi</div>
+  <ul class="nav-links-desk">
+    <li><a href="#" onclick="goHome()">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Our Story</a></li>
+    <li><a href="#">Blogs</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="nav-icon" aria-label="Account">👤</button>
+    <button class="nav-icon" aria-label="Cart">
+      🛒<span class="cart-badge">2</span>
+    </button>
+  </div>
+</nav>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <div class="search-box">
+    <span style="color:var(--mu)">🔍</span>
+    <input type="text" placeholder="Search our store">
+  </div>
+</div>
+
+<!-- DRAWER -->
+<div class="drawer" id="drawer">
+  <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  <ul>
+    <li><a href="#" onclick="goHome();closeDrawer()">Home</a></li>
+    <li><a href="#" onclick="closeDrawer()">Products</a></li>
+    <li><a href="#" onclick="closeDrawer()">Our Story</a></li>
+    <li><a href="#" onclick="closeDrawer()">Blogs</a></li>
+    <li><a href="#" onclick="closeDrawer()">Contact</a></li>
+  </ul>
+</div>
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+
+<!-- ═══ HOME PAGE ═══ -->
+<div id="pg-home">
+
+  <div class="hero-sec">
+    <div>
+      <div class="eyebrow">🌿 No chemicals. No shortcuts.</div>
+      <h1>Pickle like <em>Dadi</em> used to make</h1>
+      <p>Handcrafted in small batches from farm-sourced mangoes, whole spices, and zero preservatives.</p>
+      <button class="btn-primary" onclick="goProd()">Shop Now</button>
+    </div>
+    <div class="hero-jar">🫙</div>
+  </div>
+
+  <div class="trust-scroll">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="ti-icon">🦈</span><div><strong>Shark Tank India</strong><span>Featured Brand</span></div></div>
+      <div class="trust-item"><span class="ti-icon">🏆</span><div><strong>10 Lakh+</strong><span>Happy Families</span></div></div>
+      <div class="trust-item"><span class="ti-icon">🧪</span><div><strong>Zero</strong><span>Chemical Preservatives</span></div></div>
+      <div class="trust-item"><span class="ti-icon">✅</span><div><strong>FSSAI</strong><span>Certified</span></div></div>
+      <div class="trust-item"><span class="ti-icon">⭐</span><div><strong>4.7 / 5</strong><span>Average Rating</span></div></div>
+    </div>
+  </div>
+
+  <div class="sec" style="padding-bottom:0;">
+    <div class="cat-scroll">
+      <button class="cat-pill active">🥭 All Pickles</button>
+      <button class="cat-pill">🥭 Mango Achar</button>
+      <button class="cat-pill">🌶️ Chilli Achar</button>
+      <button class="cat-pill">🧄 Mixed Achar</button>
+      <button class="cat-pill">🎁 Gift Packs</button>
+      <button class="cat-pill">🌾 Chutneys</button>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-row"><h2 class="sec-h" style="margin:0;">Our Bestsellers</h2><a href="#">View all →</a></div>
+    <div class="prod-grid">
+      <div class="prod-card" onclick="goProd()">
+        <div class="prod-img" style="background:linear-gradient(135deg,#FFF0D0,#FFE0A0);">🫙</div>
+        <div class="prod-body">
+          <span class="prod-tag t-best">#1 Bestseller</span>
+          <div class="prod-name">Homemade Mango Pickle</div>
+          <div class="prod-sub">Sunflower Oil · Medium Spicy</div>
+          <div class="stars">★★★★☆ <span>4.7 (1,824)</span></div>
+          <div class="prod-price"><span class="p-cur">₹299</span><span class="p-mrp">₹400</span><span class="p-off">25% off</span></div>
+          <button class="card-btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img" style="background:linear-gradient(135deg,#FFE0D0,#FFCAB0);">🫙</div>
+        <div class="prod-body">
+          <span class="prod-tag t-hot">Extra Spicy</span>
+          <div class="prod-name">Red Chilli Pickle</div>
+          <div class="prod-sub">Mustard Oil · Very Spicy</div>
+          <div class="stars">★★★★★ <span>4.8 (777)</span></div>
+          <div class="prod-price"><span class="p-cur">₹349</span><span class="p-mrp">₹400</span><span class="p-off">13% off</span></div>
+          <button class="card-btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img" style="background:linear-gradient(135deg,#E8F5E0,#D0EAC0);">🫙</div>
+        <div class="prod-body">
+          <span class="prod-tag t-mild">Jain Friendly</span>
+          <div class="prod-name">Punjabi Mango Pickle</div>
+          <div class="prod-sub">Mustard Oil · Medium Spicy</div>
+          <div class="stars">★★★★★ <span>4.8 (650)</span></div>
+          <div class="prod-price"><span class="p-cur">₹299</span><span class="p-mrp">₹400</span><span class="p-off">25% off</span></div>
+          <button class="card-btn">Add to Cart</button>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img" style="background:linear-gradient(135deg,#FFF5D0,#FFE890);">🎁</div>
+        <div class="prod-body">
+          <span class="prod-tag t-gift">Gift Pack</span>
+          <div class="prod-name">Nani's Special Pack</div>
+          <div class="prod-sub">8 × 75g Assorted Pickles</div>
+          <div class="stars">★★★★★ <span>4.8 (1,762)</span></div>
+          <div class="prod-price"><span class="p-cur">₹599</span><span class="p-mrp">₹699</span><span class="p-off">14% off</span></div>
+          <button class="card-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec sec-alt">
+    <h2 class="sec-h">The Tanu ki Rasoi Promise</h2>
+    <div class="promise-grid">
+      <div class="promise-card"><span class="picon">🌿</span><h3>Zero Chemicals</h3><p>No synthetic preservatives — real ingredients that preserve themselves the old way.</p></div>
+      <div class="promise-card"><span class="picon">🧑‍🌾</span><h3>Farm Sourced</h3><p>Mangoes from village farms. Spices from growers who know their craft.</p></div>
+      <div class="promise-card"><span class="picon">☀️</span><h3>Sun Fermented</h3><p>Stored in traditional barnis and aged under the sun for centuries.</p></div>
+      <div class="promise-card"><span class="picon">🧪</span><h3>Lab Tested</h3><p>Every batch tested for safety and consistency before it reaches you.</p></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h2 class="sec-h">How Every Jar is Made</h2>
+    <div class="process-list">
+      <div class="proc-item"><div class="proc-dot">🧑‍🌾</div><div><div class="proc-n">Step 1</div><div class="proc-nm">Farm Sourced</div><div class="proc-d">Fresh mangoes from Chhatrapati Sambhajinagar villages</div></div></div>
+      <div class="proc-item"><div class="proc-dot">🔪</div><div><div class="proc-n">Step 2</div><div class="proc-nm">Washed & Cut</div><div class="proc-d">Hand-washed, chopped, brined in salt & turmeric</div></div></div>
+      <div class="proc-item"><div class="proc-dot">🌶️</div><div><div class="proc-n">Step 3</div><div class="proc-nm">Spice Mixing</div><div class="proc-d">Aromatic spices sautéed using grandma's original recipe</div></div></div>
+      <div class="proc-item"><div class="proc-dot">☀️</div><div><div class="proc-n">Step 4</div><div class="proc-nm">Sun Fermented</div><div class="proc-d">Stored in barnis, left in the sun to mature naturally</div></div></div>
+      <div class="proc-item"><div class="proc-dot">🧪</div><div><div class="proc-n">Step 5</div><div class="proc-nm">Lab Tested</div><div class="proc-d">Tested for safety, hygiene, and taste consistency</div></div></div>
+      <div class="proc-item"><div class="proc-dot">📦</div><div><div class="proc-n">Step 6</div><div class="proc-nm">Sealed & Shipped</div><div class="proc-d">Packed hygienically, sealed fresh, delivered to you</div></div></div>
+    </div>
+  </div>
+
+  <div class="sec sec-alt">
+    <h2 class="sec-h">What 10 Lakh+ Families Say</h2>
+    <div class="rev-list">
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Superlicousssd!!! The salt, texture, masala, taste, oil — everything just perfect! The spill-proof foil seal is brilliant."</p><div class="rev-author"><div class="rev-av">👩</div><div><div class="rev-name">Valencia F.</div><div class="rev-meta">Verified · Sep 2023</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Jaisa naam hai waisa hi taste hai. Authentic, mouthwatering — just like my mother's recipe."</p><div class="rev-author"><div class="rev-av">👨</div><div><div class="rev-name">Shashikala S.</div><div class="rev-meta">Verified · Aug 2023</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Awesome pickle. Ordering for the second time. Exactly the taste of home. Won't switch."</p><div class="rev-author"><div class="rev-av">👨</div><div><div class="rev-name">Subhash D. S.</div><div class="rev-meta">Verified · Sep 2023</div></div></div></div>
+    </div>
+  </div>
+
+  <div class="cta-sec">
+    <h2>Your first taste of real achar.</h2>
+    <p>Free delivery on orders above ₹499 · COD available everywhere</p>
+    <button class="btn-dk" onclick="goProd()">Shop the Collection</button>
+  </div>
+
+  <footer>
+    <div class="foot-inner-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">Tanu ki Rasoi</div>
+        <p>Handcrafted Indian pickles made with zero chemicals, farm-fresh mangoes, and decades-old recipes.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h4>Products</h4><ul><li><a href="#">Mango Pickles</a></li><li><a href="#">Chilli Pickles</a></li><li><a href="#">Mixed Achar</a></li><li><a href="#">Gift Packs</a></li></ul></div>
+        <div class="foot-col"><h4>Company</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#">Press</a></li></ul></div>
+        <div class="foot-col"><h4>Help</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-btm"><p>© 2024 Tanu ki Rasoi. All rights reserved.</p><p>🇮🇳 Made in India · FSSAI Licensed · Shark Tank Featured</p></div>
+  </footer>
+</div>
+
+<!-- ═══ PRODUCT PAGE ═══ -->
+<div id="pg-prod" style="display:none;">
+
+  <div class="breadcrumb">
+    <a onclick="goHome()">Home</a><span class="bc-sep">›</span>
+    <a href="#">Summer Special Pickle</a><span class="bc-sep">›</span>
+    <span>Punjabi Mango Pickle</span>
+  </div>
+
+  <div class="prod-layout">
+    <!-- Gallery -->
+    <div>
+      <div class="gal-main" id="gal-main">🫙
+        <button class="gal-arrow prev" onclick="galPrev()">‹</button>
+        <button class="gal-arrow next" onclick="galNext()">›</button>
+      </div>
+      <div class="gal-thumbs">
+        <div class="gal-thumb active" onclick="setGal(this,'🫙','linear-gradient(135deg,#FFF0D0,#FFE0A0)')">🫙</div>
+        <div class="gal-thumb" onclick="setGal(this,'🥭','linear-gradient(135deg,#FFF5D0,#FFE890)')">🥭</div>
+        <div class="gal-thumb" onclick="setGal(this,'🌿','linear-gradient(135deg,#E8F5E0,#D0EAC0)')">🌿</div>
+        <div class="gal-thumb" onclick="setGal(this,'🌶️','linear-gradient(135deg,#FFE0D0,#FFCAB0)')">🌶️</div>
+        <div class="gal-thumb" onclick="setGal(this,'📦','linear-gradient(135deg,#F0F0F0,#E0E0E0)')">📦</div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="prod-info">
+      <div class="pd-eyebrow">Summer Special Pickle</div>
+      <h1 class="pd-title">Punjabi Mango Pickle | Punjabi Aam Ka Achar</h1>
+
+      <div class="pd-ratings">
+        <div class="rating-row"><span class="ry">★★★★★</span><span>4.8</span><span class="rc">| 650 Reviews</span></div>
+        <div class="rating-row"><span class="rg">★★★★☆</span><span>4.1</span><span class="rc">| 6425 Reviews on Amazon</span></div>
+        <div class="amazon-badge">a Amazon's Choice</div>
+      </div>
+
+      <div class="attr-row">
+        <div class="attr-badge"><span class="ab-icon">🛢️</span><span class="ab-label">Mustard Oil</span></div>
+        <div class="attr-badge"><span class="ab-icon">🌶️</span><span class="ab-label">Medium Spicy</span></div>
+        <div class="attr-badge"><span class="ab-icon">🌿</span><span class="ab-label">Jain Friendly</span></div>
+      </div>
+
+      <div class="urgency">🔥 36 sold in last 8 hours</div>
+
+      <div class="price-row">
+        <span class="big-price">₹299.00</span>
+        <span class="big-mrp">₹400.00</span>
+        <span class="p-off" style="font-size:.85rem;background:rgba(61,122,40,.1);padding:.12rem .45rem;border-radius:4px;">25% off</span>
+      </div>
+      <div class="price-tax">(Inclusive of all taxes)</div>
+
+      <div class="shelf-row">🗓️ Shelf Life: 12 months from the date of packaging</div>
+
+      <div class="feat-icons">
+        <div class="feat-item"><span class="feat-icon">🧤</span><span class="feat-label">Hygienically Handmade</span></div>
+        <div class="feat-item"><span class="feat-icon">⭐</span><span class="feat-label">Premium Ingredients</span></div>
+        <div class="feat-item"><span class="feat-icon">☀️</span><span class="feat-label">Sun-Dried</span></div>
+        <div class="feat-item"><span class="feat-icon">🚫</span><span class="feat-label">No Chemical Preservatives</span></div>
+      </div>
+
+      <div class="del-box">
+        <div class="del-hdr">📍 Estimated Delivery — 411004 &nbsp; 📅</div>
+        <div class="del-info">Usually delivered within <strong>2 to 3 days</strong></div>
+        <span class="change-pin">Change pincode</span>
+      </div>
+
+      <!-- Desktop variant + cart -->
+      <div class="desktop-vars">
+        <div style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:.6rem;">Choose Size</div>
+        <div class="dvar-row">
+          <div class="dvar active" onclick="dSelectVar(this,299,400,25)">
+            <div class="dvar-sz">325g Jar</div>
+            <div class="dvar-pr">₹299 <span style="text-decoration:line-through;color:var(--mu);font-weight:400;">₹400</span></div>
+            <div class="dvar-of">25% off · ₹92/100g</div>
+          </div>
+          <div class="dvar" onclick="dSelectVar(this,799,999,20)">
+            <div class="dvar-best">Best Value</div>
+            <div class="dvar-sz">1Kg Jar</div>
+            <div class="dvar-pr">₹799 <span style="text-decoration:line-through;color:var(--mu);font-weight:400;">₹999</span></div>
+            <div class="dvar-of">20% off · ₹79.9/100g</div>
+          </div>
+        </div>
+        <div class="dqty-row">
+          <div class="dqty-ctrl">
+            <button class="dqty-btn" onclick="chQty('d',-1)">−</button>
+            <input class="dqty-num" id="dqty" type="text" value="1" readonly>
+            <button class="dqty-btn" onclick="chQty('d',1)">+</button>
+          </div>
+          <button class="dcart-btn">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offers panel -->
+  <div class="offers-panel">
+    <div class="offers-panel-h">🏷️ Summer's Offers + Extra 3% Off on all Prepaid Orders</div>
+    <div class="offer-item">
+      <div class="offer-hdr">FREE DELIVERY <span class="offer-tag">Auto discount</span></div>
+      <div class="offer-desc">Buy 2 pickles or Shop Order >@499</div>
+    </div>
+    <div class="offer-item">
+      <div class="offer-hdr">BUY 3 Get 3 Gifts <span class="offer-tag">Auto discount</span></div>
+      <div class="offer-desc">Get any Three 325g Jars + Free Shipping + Gift + Free Pickle jar 75g</div>
+    </div>
+    <div class="offer-item">
+      <div class="offer-hdr">Buy 6 Get Tote Bag Free <span class="offer-tag">Auto discount</span></div>
+      <div class="offer-desc">Get Any 6 Jars and Get a Tote Bag Free</div>
+    </div>
+  </div>
+
+  <!-- Accordions -->
+  <div class="acc-group">
+    <div class="acc-item open">
+      <div class="acc-hdr" onclick="toggleAcc(this)">Ingredients <span class="acc-icon">+</span></div>
+      <div class="acc-body">
+        <ul class="ing-list">
+          <li>🥭 Mango (Ramkela Aam)</li>
+          <li>🌿 Fennel seeds (Sauf)</li>
+          <li>🛢️ Mustard oil (Sarso ka tel)</li>
+          <li>🌾 Yellow mustard (Pila sarso)</li>
+          <li>🌶️ Red chilli powder</li>
+          <li>🌱 Kalonji (Nigella seeds)</li>
+          <li>🤍 Asafoetida (Hing)</li>
+          <li>🌶️ Chilli flakes (Mirch ke tukde)</li>
+          <li>🟡 Turmeric (Haldi)</li>
+          <li>🧂 Salt (Namak)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-hdr" onclick="toggleAcc(this)">Shelf Life <span class="acc-icon">+</span></div>
+      <div class="acc-body">
+        <p style="font-size:.82rem;line-height:1.75;"><strong>12 months</strong> from the date of packaging.<br><br>Store in a cool, dry place. After opening, refrigerate and use a dry spoon. Avoid contact with water.</p>
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-hdr" onclick="toggleAcc(this)">Texture & Taste <span class="acc-icon">+</span></div>
+      <div class="acc-body">
+        <p style="font-size:.82rem;line-height:1.75;">Sour and medium spicy. Firm mango pieces coated in aromatic mustard oil with whole spices. Authentic North Indian Punjabi taste profile.</p>
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-hdr" onclick="toggleAcc(this)">Know Your Pickle <span class="acc-icon">+</span></div>
+      <div class="acc-body">
+        <p style="font-size:.82rem;line-height:1.75;">This Punjabi Mango Pickle is made using Ramkela mangoes sourced from Uttar Pradesh. Our didis use their traditional regional recipe with kalonji and mustard oil for an authentic Punjabi flavour.</p>
+      </div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-hdr" onclick="toggleAcc(this)">Offers <span class="acc-icon">+</span></div>
+      <div class="acc-body">
+        <p style="font-size:.82rem;color:var(--mu);line-height:1.75;">All offers are automatically applied at checkout — no coupon codes needed. Free delivery on orders above ₹499. COD available.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related products -->
+  <div class="sec">
+    <div class="sec-row"><h2 class="sec-h" style="margin:0;">Frequently Bought Pickles</h2></div>
+    <div class="prod-scroll-wrap">
+      <div class="prod-scroll">
+        <div class="prod-card" onclick="goProd()"><div class="prod-img" style="background:linear-gradient(135deg,#FFF0D0,#FFE0A0);">🫙</div><div class="prod-body"><span class="prod-tag t-best">Bestseller</span><div class="prod-name">Homemade Mango Pickle</div><div class="stars">★★★★☆ <span>4.7 (1,824)</span></div><div class="prod-price"><span class="p-cur">₹299</span><span class="p-mrp">₹400</span></div><button class="card-btn">Add to Cart</button></div></div>
+        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#FFE0D0,#FFCAB0);">🫙</div><div class="prod-body"><span class="prod-tag t-hot">Spicy</span><div class="prod-name">Red Chilli Pickle</div><div class="stars">★★★★★ <span>4.8 (777)</span></div><div class="prod-price"><span class="p-cur">₹349</span><span class="p-mrp">₹400</span></div><button class="card-btn">Add to Cart</button></div></div>
+        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#FFF5D0,#FFE890);">🎁</div><div class="prod-body"><span class="prod-tag t-gift">Gift Pack</span><div class="prod-name">Nani's Special Pack</div><div class="stars">★★★★★ <span>4.8 (1,762)</span></div><div class="prod-price"><span class="p-cur">₹599</span><span class="p-mrp">₹699</span></div><button class="card-btn">Add to Cart</button></div></div>
+        <div class="prod-card"><div class="prod-img" style="background:linear-gradient(135deg,#E8F5E0,#D0EAC0);">🫙</div><div class="prod-body"><span class="prod-tag t-mild">Traditional</span><div class="prod-name">Avakaya Pickle</div><div class="stars">★★★★★ <span>4.8 (320)</span></div><div class="prod-price"><span class="p-cur">₹329</span><span class="p-mrp">₹400</span></div><button class="card-btn">Add to Cart</button></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it's made -->
+  <div class="sec how-sec">
+    <h2 class="sec-h">How Tanu ki Rasoi Makes This Pickle Special</h2>
+    <div class="how-step"><div class="how-num">1</div><div class="how-content"><h4>Farm Sourced</h4><p>Fresh Ramkela mangoes sourced directly from farmers in Uttar Pradesh. Our didis use their traditional skills and regional recipes.</p></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-content"><h4>Washed & Cut</h4><p>Mangoes are washed and uniformly chopped by our didis, then brined in salt and turmeric to draw out moisture.</p></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-content"><h4>Spice Mixing</h4><p>Aromatic Indian spices are sautéed according to grandma's traditional Punjabi recipe and mixed with mango pieces.</p></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-content"><h4>Sun Fermented</h4><p>Prepared pickle is stored in barnis and kept in the sun for fermentation, developing deep authentic flavour.</p></div></div>
+    <div class="how-step"><div class="how-num">5</div><div class="how-content"><h4>Lab Tested</h4><p>Each batch undergoes lab testing to meet food safety and quality standards, ensuring hygiene and consistent taste.</p></div></div>
+    <div class="how-step" style="margin-bottom:0;"><div class="how-num">6</div><div class="how-content"><h4>Sealed in Barni</h4><p>After approval, the pickle is filled into a barni, securely sealed, labelled, and begins its journey to your home.</p></div></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="sec">
+    <h2 class="sec-h">Frequently Asked Questions</h2>
+    <div class="faq-group">
+      <div class="acc-item">
+        <div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">Which oil is used in this Punjabi Aam ka Achar? <span class="acc-icon">+</span></div>
+        <div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">This pickle uses pure Mustard Oil (Sarso ka tel) which gives it the authentic Punjabi flavour and aroma.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">What is the shelf life and how to store it? <span class="acc-icon">+</span></div>
+        <div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">12 months from date of packaging. Store in a cool, dry place. After opening, refrigerate and always use a dry spoon.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">Are there any preservatives in the pickle? <span class="acc-icon">+</span></div>
+        <div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">No — zero chemical preservatives. The pickle is naturally preserved by salt, oil, turmeric and sun fermentation.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">What can I eat with this Punjabi pickle? <span class="acc-icon">+</span></div>
+        <div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">It pairs wonderfully with parathas, dal-chawal, curd rice, or simply with any roti. A small spoonful elevates any Indian meal.</p></div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-hdr" onclick="toggleAcc(this)" style="text-transform:none;letter-spacing:0;font-size:.88rem;">What kind of jars are used for pickles? <span class="acc-icon">+</span></div>
+        <div class="acc-body"><p style="font-size:.82rem;line-height:1.75;color:var(--mu);">We use food-grade glass barnis with spill-proof hard foil covers that prevent leakage during shipping.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Customer Reviews -->
+  <div class="sec sec-alt">
+    <h2 class="sec-h" style="text-align:center;">Customer Reviews</h2>
+    <p style="text-align:center;color:var(--mu);font-size:.85rem;margin-bottom:1.25rem;">Loved by 10 Lakh+ Customers</p>
+
+    <div class="rating-breakdown">
+      <div class="rating-overall">
+        <div>
+          <div class="rating-big">4.75</div>
+          <div class="rating-stars-big">★★★★★</div>
+          <div class="rating-basis">Based on 650 reviews</div>
+        </div>
+        <div style="flex:1;min-width:160px;">
+          <div class="bar-row"><span class="bar-label">★★★★★</span><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div><span class="bar-count">508</span></div>
+          <div class="bar-row"><span class="bar-label">★★★★☆</span><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><span class="bar-count">130</span></div>
+          <div class="bar-row"><span class="bar-label">★★★☆☆</span><div class="bar-track"><div class="bar-fill" style="width:1.2%"></div></div><span class="bar-count">8</span></div>
+          <div class="bar-row"><span class="bar-label">★★☆☆☆</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+          <div class="bar-row"><span class="bar-label">★☆☆☆☆</span><div class="bar-track"><div class="bar-fill" style="width:.6%"></div></div><span class="bar-count">4</span></div>
+        </div>
+      </div>
+      <button class="write-rev-btn">Write a review</button>
+    </div>
+
+    <div class="rev-list">
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Superlicousssd!!! The salt-content, texture, masala, taste, oil — everything just perfect! Spill-proof foil cover is brilliant."</p><div class="rev-author"><div class="rev-av">👩</div><div><div class="rev-name">Valencia F.</div><div class="rev-meta">Verified · Sep 2023</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Very tasty. Authentic taste, reminds me my mother's recipe, mouthwatering. Will order again and again."</p><div class="rev-author"><div class="rev-av">👨</div><div><div class="rev-name">Shashikala S.</div><div class="rev-meta">Verified · Aug 2023</div></div></div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Awesome pickle. Ordering for the second time. Exactly the taste of home. Worth every rupee."</p><div class="rev-author"><div class="rev-av">👨</div><div><div class="rev-name">Ashutosh</div><div class="rev-meta">Verified · Jan 2026</div></div></div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-inner-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">Tanu ki Rasoi</div>
+        <p>Handcrafted Indian pickles made with zero chemicals, farm-fresh mangoes, and decades-old recipes.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h4>Products</h4><ul><li><a href="#">Mango Pickles</a></li><li><a href="#">Chilli Pickles</a></li><li><a href="#">Gift Packs</a></li></ul></div>
+        <div class="foot-col"><h4>Help</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns</a></li><li><a href="#">FAQ</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-btm"><p>© 2024 Tanu ki Rasoi. All rights reserved.</p><p>🇮🇳 Made in India · FSSAI Certified</p></div>
+  </footer>
+
+  <!-- STICKY BOTTOM BAR (mobile only) -->
+  <div class="sticky-bar">
+    <div class="sticky-vars">
+      <button class="svar active" onclick="sSelectVar(this,'325g Jar','₹299 ₹400 25% off')">
+        <div class="svar-lbl">325g Jar</div>
+        <div class="svar-pr">₹299.0 &nbsp;<s>₹400.0</s>&nbsp; 25% off</div>
+        <div class="svar-pr">₹92.0/100g</div>
+      </button>
+      <button class="svar" onclick="sSelectVar(this,'1Kg Jar','₹799 ₹999 20% off')">
+        <div style="font-size:.58rem;color:var(--g);font-weight:700;">Best Value</div>
+        <div class="svar-lbl">1Kg Jar</div>
+        <div class="svar-pr">₹799.0 &nbsp;<s>₹999.0</s>&nbsp; 20% off</div>
+        <div class="svar-pr">₹79.9/100g</div>
+      </button>
+    </div>
+    <div class="sticky-bot">
+      <div class="sty-qty">
+        <button class="sqbtn" onclick="chQty('s',-1)">−</button>
+        <span class="sqnum" id="sqty">1</span>
+        <button class="sqbtn" onclick="chQty('s',1)">+</button>
+      </div>
+      <button class="sticky-cart">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Page nav
+function goHome(){show('pg-home');hide('pg-prod');scrollTo(0,0);}
+function goProd(){hide('pg-home');show('pg-prod');scrollTo(0,0);}
+function show(id){document.getElementById(id).style.display='';}
+function hide(id){document.getElementById(id).style.display='none';}
+
+// Drawer
+function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('open');}
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
+
+// Gallery
+const galItems=[
+  {emoji:'🫙',bg:'linear-gradient(135deg,#FFF0D0,#FFE0A0)'},
+  {emoji:'🥭',bg:'linear-gradient(135deg,#FFF5D0,#FFE890)'},
+  {emoji:'🌿',bg:'linear-gradient(135deg,#E8F5E0,#D0EAC0)'},
+  {emoji:'🌶️',bg:'linear-gradient(135deg,#FFE0D0,#FFCAB0)'},
+  {emoji:'📦',bg:'linear-gradient(135deg,#F0F0F0,#E0E0E0)'}
+];
+let galIdx=0;
+function updateGal(){
+  const m=document.getElementById('gal-main');
+  const item=galItems[galIdx];
+  m.style.background=item.bg;
+  // Update emoji (first text node)
+  m.childNodes[0].textContent=item.emoji;
+  document.querySelectorAll('.gal-thumb').forEach((t,i)=>t.classList.toggle('active',i===galIdx));
+}
+function galNext(){galIdx=(galIdx+1)%galItems.length;updateGal();}
+function galPrev(){galIdx=(galIdx-1+galItems.length)%galItems.length;updateGal();}
+function setGal(thumb,emoji,bg){
+  galIdx=Array.from(document.querySelectorAll('.gal-thumb')).indexOf(thumb);
+  updateGal();
+}
+
+// Qty
+function chQty(mode,d){
+  const id=mode==='d'?'dqty':'sqty';
+  const el=document.getElementById(id);
+  let v=parseInt(el.textContent||el.value)+d;
+  v=Math.min(99,Math.max(1,v));
+  if(el.tagName==='INPUT')el.value=v; else el.textContent=v;
+}
+
+// Sticky var
+function sSelectVar(btn){
+  document.querySelectorAll('.sticky-bar .svar').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Desktop var
+function dSelectVar(el){
+  document.querySelectorAll('.dvar').forEach(v=>v.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Accordion
+function toggleAcc(hdr){
+  const item=hdr.parentElement;
+  item.classList.toggle('open');
+}
+
+// Category pills
+document.querySelectorAll('.cat-pill').forEach(p=>p.addEventListener('click',function(){
+  document.querySelectorAll('.cat-pill').forEach(x=>x.classList.remove('active'));
+  this.classList.add('active');
+}));
+
+// Theme toggle (global button removed — clean UI)
+</script>
